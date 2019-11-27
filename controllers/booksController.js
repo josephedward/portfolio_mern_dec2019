@@ -1,4 +1,4 @@
-const db = require("../../dev/RICH201902FSF2/20-react/01-Activities/11-Stu_ReactRouter/Solved/models");
+const db = require("../models");
 
 // Defining methods for the booksController
 module.exports = {
