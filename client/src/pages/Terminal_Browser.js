@@ -3,29 +3,45 @@ import React, { Component } from "react";
 //looks like distro is broken? 
 // import Terminal from "react-console-emulator";
 import ReactTerminal from 'react-terminal-component';
+import Terminal, {Emulator, EmulatorState, OutputType }  from "javascript-terminal";
 
-// const commands = {
-//   echo: {
-//     description: "Echo a passed string.",
-//     usage: "echo <string>",
-//     fn: function() {
-//       return `${Array.from(arguments).join(" ")}`;
-//     }
-//   }
-// };
+
 
 class Terminal_Browser extends Component {
+
+
+
+
+  constructor(props){
+   super(props);
+  
+
+   this.state = {
+    emulator : new Emulator(),
+    emulatorState: EmulatorState.createEmpty(),
+    inputStr: 'initial value'
+  };
+
+  }
+
+
   render() {
+
+
     return (
       console.log("testing terminal emulators"),
+      
       (
         <div>
-       <ReactTerminal/> 
-      {/* <Terminal
-        commands={commands}
-        welcomeMessage={'Welcome to the React terminal!'}
-        promptLabel={'me@React:~$'}
-      /> */}
+       <ReactTerminal 
+
+         emulatorState={this.state.emulatorState}
+        inputStr={this.state.inputStr}
+        onInputChange={(inputStr) => this.setState({inputStr})}
+        onStateChange={(emulatorState) => this.setState({emulatorState})}
+       />
+        
+
       </div>
  
       )
@@ -36,6 +52,63 @@ class Terminal_Browser extends Component {
 export default Terminal_Browser;
 
 /*
+
+  // state={
+  //   emulator:{},
+  //   emulatorState:{},
+  //   inputStr:""
+  // }
+   //  const emulator = new Emulator();
+  //  const emulatorState = EmulatorState.createEmpty();
+  // ReactTerminal.EmulatorState.createEmpty();
+       // console.log(this.state.EmulatorState);
+//     // this.interpretCommand=this.interpretCommand.bind(this);
+  // interpretCommand = () => {
+  //   console.log("test")
+  // }
+  
+
+  // handleKeyPress(e) {
+  //   if (e.key === 'Enter') {
+  //     console.log("shmoopy");
+  //   }
+  // }
+
+      //  onKeyDown={this.interpretCommand}
+      //      handleKeyPress={this.handleKeyPress.bind(this)}
+onKeyPress={this.handleKeyPress}
+
+  handleKeyPress = (event) => {
+    event.preventDefault();
+    document.querySelectorAll("input.sc-bdVaJa.WvDaY")[0].addEventListener("keydown",function(){console.log("enter key pressed")})
+
+    if(event.key == 'Enter'){
+      console.log('enter press here! ')
+    }
+  }
+
+onComponentDidMount(){
+  document.querySelectorAll("input.sc-bdVaJa.WvDaY")[0].addEventListener("keydown",function(){console.log("enter key pressed")})
+
+}
+       // const emulator = new Terminal.Emulator();
+// const emulatorState = Terminal.EmulatorState.createEmpty();
+// const commands = {
+//   echo: {
+//     description: "Echo a passed string.",
+//     usage: "echo <string>",
+//     fn: function() {
+//       return `${Array.from(arguments).join(" ")}`;
+//     }
+//   }
+// };
+
+      { <Terminal
+        commands={commands}
+        welcomeMessage={'Welcome to the React terminal!'}
+        promptLabel={'me@React:~$'}
+      /> }
+
 import React from 'react'
 import Terminal from 'react-console-emulator'
 
