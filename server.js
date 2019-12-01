@@ -3,7 +3,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const routes = require("./routes");
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 8888;
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -16,9 +16,12 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes);
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactreadinglist");
+//added line to avoid deprecation warning
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/react_project_list",{ useNewUrlParser: true });
 
 // Start the API server
 app.listen(PORT, function() {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
+
+
