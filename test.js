@@ -1,0 +1,63 @@
+//this is why you had issues when authenticating before? 
+require('dotenv').config()
+
+const GitHubClient = require('./js_github_quickstart/libs/GitHubClient.js').GitHubClient;
+const users = require('./js_github_quickstart/libs/features/users');
+const octocat = require('./js_github_quickstart/libs/features/octocat');
+const repos = require('./js_github_quickstart/libs/features/repositories');
+
+const ghClient = new GitHubClient({
+    baseUri:"https://api.github.com",
+    token: process.env.TOKEN_GITHUB_DOT_COM
+  },users, repos, octocat);
+
+
+
+
+  async function getMe(){
+      let myName=ghClient.fetchUser({handle:'josephedward'})
+    .then(response =>{
+        return response;
+    })
+    .catch(console.error);
+    return myName;
+  }
+
+
+let me="";
+
+async function getMeToo(){
+    me= await getMe();
+console.log(me);
+}
+
+getMeToo();
+
+
+// let test=  async () => {
+//  test=await ghClient.fetchUser({handle:'josephedward'})
+// .then(response =>{
+//     // console.log(response);
+//     return response;
+// })
+// .catch(console.error);
+// }
+// console.log(test.response);
+
+// //   ghClient.fetchUserRepositories({handle:'josephedward'})
+//   .then(repos =>{
+//       console.log(repos);
+//   })
+
+
+
+
+
+// ghClient.octocat()
+//   .then(data => {
+//     // display the Zen of Octocat
+//     console.log(data);
+//   })
+
+
+

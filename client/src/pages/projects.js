@@ -55,7 +55,8 @@ class projects extends Component {
 
   render() {
     return (
-      <Container fluid>
+      <div style={{"background-color":"black"}}>
+      <Container fluid >
         <Row>
           <Col size="md-6">
             <Jumbotron>
@@ -111,6 +112,7 @@ class projects extends Component {
           </Col>
         </Row>
       </Container>
+      </div>
     );
   }
 }
