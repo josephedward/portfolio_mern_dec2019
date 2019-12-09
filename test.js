@@ -34,30 +34,4 @@ console.log(me);
 getMeToo();
 
 
-// let test=  async () => {
-//  test=await ghClient.fetchUser({handle:'josephedward'})
-// .then(response =>{
-//     // console.log(response);
-//     return response;
-// })
-// .catch(console.error);
-// }
-// console.log(test.response);
-
-// //   ghClient.fetchUserRepositories({handle:'josephedward'})
-//   .then(repos =>{
-//       console.log(repos);
-//   })
-
-
-
-
-
-// ghClient.octocat()
-//   .then(data => {
-//     // display the Zen of Octocat
-//     console.log(data);
-//   })
-
-
 

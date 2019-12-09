@@ -60,7 +60,7 @@ class projects extends Component {
         <Row>
           <Col size="md-6">
             <Jumbotron>
-              <h1>What projects Should I Read?</h1>
+              <h1>Suggest a Project to Work On?</h1>
             </Jumbotron>
             <form>
               <Input
