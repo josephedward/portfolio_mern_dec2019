@@ -7,7 +7,7 @@ import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
 
-class projects extends Component {
+class Projects extends Component {
   state = {
     projects: [],
     title: "",
@@ -55,7 +55,9 @@ class projects extends Component {
 
   render() {
     return (
-      <div style={{"background-color":"black"}}>
+      <div
+      //  style={{"background-color":"black"}}
+      >
       <Container fluid >
         <Row>
           <Col size="md-6">
@@ -89,15 +91,15 @@ class projects extends Component {
               </FormBtn>
             </form>
           </Col>
-          <Col size="md-6 sm-12">
+          <Col  size="md-6 sm-12">
             <Jumbotron>
               <h1>projects On My List</h1>
             </Jumbotron>
             {this.state.projects.length ? (
-              <List>
+              <List >
                 {this.state.projects.map(project => (
-                  <ListItem key={project._id}>
-                    <Link to={"/projects/" + project._id}>
+                  <ListItem  key={project._id}>
+                    <Link  to={"/projects/" + project._id}>
                       <strong>
                         {project.title} by {project.contributors}
                       </strong>
@@ -107,7 +109,7 @@ class projects extends Component {
                 ))}
               </List>
             ) : (
-              <h3>No Results to Display</h3>
+              <h3 style={wB} >No Results to Display</h3>
             )}
           </Col>
         </Row>
@@ -117,4 +119,8 @@ class projects extends Component {
   }
 }
 
-export default projects;
+const wB={
+  background:"white"
+}
+
+export default Projects;

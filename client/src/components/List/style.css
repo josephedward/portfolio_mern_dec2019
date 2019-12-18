@@ -4,16 +4,19 @@
   border-radius: 4px;
   overflow-y: scroll;
   overflow-x: hidden;
+  background:white;
 }
 
 .list-overflow-container ul {
   margin: 0;
+  background:white;
 }
 
 .list-overflow-container li {
   border-radius: 0px;
   border-left: none;
   border-right: none;
+  background:white;
 }
 
 .list-overflow-container li * {
@@ -31,3 +34,4 @@
 .list-overflow-container li:last-child {
   border-bottom: none;
 }
+
