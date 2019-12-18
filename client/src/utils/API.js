@@ -1,5 +1,7 @@
 import axios from "axios";
 
+
+
 export default {
   // Gets all projects
   getprojects: function() {
@@ -16,5 +18,10 @@ export default {
   // Saves a project to the database
   saveproject: function(projectData) {
     return axios.post("/api/projects", projectData);
+  },
+  getrepos: function(){
+    return axios.get("/api/repos/");
   }
 };
+
+

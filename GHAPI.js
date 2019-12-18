@@ -30,14 +30,15 @@ const ghClient = new GitHubClient({
     return myRepos;
   }
 
-let call="";
-async function caller(){
-    call= await getMyRepos();
-console.log(call);
-return call;
+let mRs="";
+async function callGAPI(){
+    mRs= await getMyRepos();
+// console.log(mRs);
+return mRs;
 }
-// caller();
 
-// export default caller;
+// callGAPI();
+
+module.exports= {callGAPI};
 
 

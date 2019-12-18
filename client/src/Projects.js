@@ -22,9 +22,9 @@ class Projects extends Component {
 
   loadprojects = () => {
 
-    API.getprojects()
+    API.getrepos()
       .then(res =>
-        this.setState({ projects: res.data, title: "", contributors: "", description: "" })
+        this.setState({ projects: res.data, title: "", contributors: "", description: "" }),
       )
       .catch(err => console.log(err));
   };
