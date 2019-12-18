@@ -20,7 +20,7 @@ export default {
     return axios.post("/api/projects", projectData);
   },
   getrepos: function(){
-    return axios.get("/api/repos/");
+    return axios.get("/api/repos");
   }
 };
 
