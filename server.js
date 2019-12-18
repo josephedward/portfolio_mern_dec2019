@@ -21,7 +21,7 @@ app.use(routes);
 
 // Connect to the Mongo DB
 //added line to avoid deprecation warning
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/react_project_list",{ useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/react_project_list",{ useNewUrlParser: true ,useUnifiedTopology: true});
 
 // Start the API server
 app.listen(PORT, function() {
