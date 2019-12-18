@@ -5,6 +5,10 @@ const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 8888;
 
+const caller=require("./gAPI");
+console.log(caller);
+
+
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());

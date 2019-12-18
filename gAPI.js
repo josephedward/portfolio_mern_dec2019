@@ -1,17 +1,15 @@
 //this is why you had issues when authenticating before? 
 require('dotenv').config()
-
 const GitHubClient = require('./js_github_quickstart/libs/GitHubClient.js').GitHubClient;
 const users = require('./js_github_quickstart/libs/features/users');
 const octocat = require('./js_github_quickstart/libs/features/octocat');
 const repos = require('./js_github_quickstart/libs/features/repositories');
 
+
 const ghClient = new GitHubClient({
     baseUri:"https://api.github.com",
     token: process.env.TOKEN_GITHUB_DOT_COM
   },users, repos, octocat);
-
-
 
 
   async function getMe(){
@@ -23,15 +21,23 @@ const ghClient = new GitHubClient({
     return myName;
   }
 
+  async function getMyRepos(){
+    let myRepos=ghClient.fetchUserRepositories({handle:'josephedward'})
+    .then(response =>{
+        return response;
+    })
+    .catch(console.error);
+    return myRepos;
+  }
 
-let me="";
-
-async function getMeToo(){
-    me= await getMe();
-console.log(me);
+let call="";
+async function caller(){
+    call= await getMyRepos();
+console.log(call);
+return call;
 }
+// caller();
 
-getMeToo();
-
+export default caller;
 
 
