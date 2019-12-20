@@ -7,6 +7,7 @@ import { Col, Row, Container } from "./components/Grid";
 import { List, ListItem } from "./components/List";
 import { Input, TextArea, FormBtn } from "./components/Form";
 // import caller from "../../../gAPI";
+// import {List} from "semantic-ui-react";
 
 class Projects extends Component {
   state = {
@@ -56,6 +57,12 @@ class Projects extends Component {
     }
   };
 
+
+  loadProjectURL(e,url){
+    // e.preventDefault();
+    window.location.replace(url)
+  }
+
   render() {
     return (
       <div
@@ -95,22 +102,31 @@ class Projects extends Component {
             </form>
           </Col> */}
           <Col  size="md-6 sm-12">
-            <Jumbotron>
-              <h1>My Projects: </h1>
-            </Jumbotron>
+            {/* <Jumbotron> */}
+              <h1 style={wB}>My Projects: </h1>
+            {/* </Jumbotron> */}
             {this.state.projects.length ? (
               <List >
                 {this.state.projects.map(project => (
                   <ListItem  key={project._id}>
-                    <Link href={project.html_url}  
-                    to= {project.html_url}
-                    // {"/projects/" + project._id}
-                    >
+                  {/* <a href={project.html_url}> */}
+
+                    {/* <Link 
+                    // href={project.html_url}  
+                    to={project.html_url}
+                     onClick={() => this.loadProjectURL(this.target.event, project.html_url)}
+                    // {project.html_url}
+                    // {"/projects/" + project.name}
+                    
+                    > */}
                       <strong>
+                        <a href={project.html_url}>
                         {project.name}
+                         </a>
                          {/* by {project.contributors} */}
                       </strong>
-                    </Link>
+                    {/* </Link> */}
+                    {/* </a> */}
                     <DeleteBtn onClick={() => this.deleteproject(project._id)} />
                   </ListItem>
                 ))}
