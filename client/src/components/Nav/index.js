@@ -17,6 +17,11 @@ function Nav() {
       <a style={{ color: "black", margin: "10px" }} href="/terminal">
         Terminal{" "}
       </a>
+      <a style={{ color: "black", margin: "10px" }} href="https://jeffhuang.com/designed_to_last/">
+    {/* Need the to create plain HTML site */}
+        Persistent{" "}
+      </a>
+ 
       {/* <a style={{color:"black",margin:"10px"}} href="https://josephedward.github.io/portfolio-site/">jQuery 'Concept' Portfolio<span role="img" aria-label="smile emoji"> 😁 </span></a> */}
     </nav>
   );

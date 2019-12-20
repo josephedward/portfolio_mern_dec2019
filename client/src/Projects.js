@@ -23,8 +23,9 @@ class Projects extends Component {
   loadprojects = () => {
 
     API.getrepos()
-      .then(res =>
-        this.setState({ projects: res.data, title: "", contributors: "", description: "" }),
+      .then((res) =>
+        // console.log(res.data),
+        this.setState({ projects: res.data, title: "", contributors: "", description: "" })
       )
       .catch(err => console.log(err));
   };
@@ -62,7 +63,7 @@ class Projects extends Component {
       >
       <Container fluid >
         <Row>
-          <Col size="md-6">
+          {/* <Col size="md-6">
             <Jumbotron>
               <h1>Suggest a Project to Work On?</h1>
             </Jumbotron>
@@ -92,18 +93,22 @@ class Projects extends Component {
                 Submit project
               </FormBtn>
             </form>
-          </Col>
+          </Col> */}
           <Col  size="md-6 sm-12">
             <Jumbotron>
-              <h1>projects On My List</h1>
+              <h1>My Projects: </h1>
             </Jumbotron>
             {this.state.projects.length ? (
               <List >
                 {this.state.projects.map(project => (
                   <ListItem  key={project._id}>
-                    <Link  to={"/projects/" + project._id}>
+                    <Link href={project.html_url}  
+                    to= {project.html_url}
+                    // {"/projects/" + project._id}
+                    >
                       <strong>
-                        {project.title} by {project.contributors}
+                        {project.name}
+                         {/* by {project.contributors} */}
                       </strong>
                     </Link>
                     <DeleteBtn onClick={() => this.deleteproject(project._id)} />
@@ -111,6 +116,7 @@ class Projects extends Component {
                 ))}
               </List>
             ) : (
+              //something is coming back from projects, or it would be displaying this
               <h3 style={wB} >No Results to Display</h3>
             )}
           </Col>

@@ -23,7 +23,8 @@ class Detail extends Component {
           <Col size="md-12">
             <Jumbotron>
               <h1>
-                {this.state.project.title} by {this.state.project.contributors}
+                {this.state.project.name} 
+                {/* by {this.state.project.contributors} */}
               </h1>
             </Jumbotron>
           </Col>

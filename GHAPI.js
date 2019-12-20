@@ -31,14 +31,14 @@ const ghClient = new GitHubClient({
   }
 
 let mRs="";
-async function callGAPI(){
+async function callGHAPI(){
     mRs= await getMyRepos();
 // console.log(mRs);
 return mRs;
 }
 
-// callGAPI();
+// callGHAPI().then((res)=>{console.log(res)});
 
-module.exports= {callGAPI};
+module.exports= {callGHAPI};
 
 
