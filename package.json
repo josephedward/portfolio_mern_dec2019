@@ -1,0 +1,45 @@
+{
+  "name": "Joseph's_Portfolio",
+  "version": "0.0.1",
+  "engines": {
+    "node": "12.13.1",
+    "npm": "6.12.1"
+  },
+  "description": "Portfolio",
+  "main": "server.js",
+  "scripts": {
+    "start": "./scripts/preflight.sh && if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "seed": "node scripts/seedDB.js",
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm run build"
+  },
+  "contributors": "Joseph Edward",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^4.1.0",
+    "nodemon": "^1.18.7"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.16.3",
+    "github-api": "^3.3.0",
+    "if-env": "^1.0.4",
+    "javascript-terminal": "^1.0.3",
+    "mongoose": "^5.3.16",
+    "node-fetch": "^1.6.3",
+    "react-console-emulator": "^3.0.4",
+    "react-iframe": "^1.8.0",
+    "react-keydown": "^1.9.12",
+    "react-terminal-component": "^1.4.1",
+    "semantic-ui-react": "^0.88.2",
+    "shell.js": "^3.1.0",
+    "shelljs": "^0.8.3",
+    "terminal-in-react": "^4.3.1",
+    "terminatorator": "0.0.6"
+  }
+}
