@@ -108,7 +108,7 @@ class Projects extends Component {
             {this.state.projects.length ? (
               <List >
                 {this.state.projects.map(project => (
-                  <ListItem  key={project._id}>
+                  <ListItem  key={project.id}>
                   {/* <a href={project.html_url}> */}
 
                     {/* <Link 
@@ -125,6 +125,7 @@ class Projects extends Component {
                          </a>
                          {/* by {project.contributors} */}
                       </strong>
+                      <p>{project.description}</p>
                     {/* </Link> */}
                     {/* </a> */}
                     <DeleteBtn onClick={() => this.deleteproject(project._id)} />

@@ -37,7 +37,7 @@ async function callGHAPI(){
 return mRs;
 }
 
-// callGHAPI().then((res)=>{console.log(res)});
+callGHAPI().then((res)=>{console.log(res)});
 
 module.exports= {callGHAPI};
 
