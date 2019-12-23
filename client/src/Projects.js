@@ -1,11 +1,12 @@
 import React, { Component } from "react";
-import DeleteBtn from "./components/DeleteBtn";
-import Jumbotron from "./components/Jumbotron";
+// import DeleteBtn from "./components/DeleteBtn";
+// import Jumbotron from "./components/Jumbotron";
 import API from "./utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "./components/Grid";
 import { List, ListItem } from "./components/List";
 import { Input, TextArea, FormBtn } from "./components/Form";
+import Axios from "axios";
 // import caller from "../../../gAPI";
 // import {List} from "semantic-ui-react";
 
@@ -22,11 +23,15 @@ class Projects extends Component {
   }
 
   loadprojects = () => {
-
     API.getrepos()
-      .then((res) =>
+      .then(res =>
         // console.log(res.data),
-        this.setState({ projects: res.data, title: "", contributors: "", description: "" })
+        this.setState({
+          projects: res.data,
+          title: "",
+          contributors: "",
+          description: ""
+        })
       )
       .catch(err => console.log(err));
   };
@@ -57,20 +62,36 @@ class Projects extends Component {
     }
   };
 
-
-  loadProjectURL(e,url){
+  loadProjectURL(e, url) {
     // e.preventDefault();
-    window.location.replace(url)
+    window.location.replace(url);
   }
 
+
+   requestOptions = {
+    method: 'GET',
+    headers: {
+        'User-Agent':"PostmanRuntime/7.21.0",
+        Accept:"*/*",
+        'Cache-Control':"no-cache",
+        "Postman-Token":"9d4b0799-97d2-4f8b-945c-e31f72b4361e",
+        Host:"randomwordgenerator.com",
+        'Accept-Encoding':"gzip, deflate",
+        Connection:"keep-alive",
+        "Access-Control-Allow-Origin": true
+      },
+    redirect: 'follow'
+  };
+  
+  
   render() {
     return (
       <div
       //  style={{"background-color":"black"}}
       >
-      <Container fluid >
-        <Row>
-          {/* <Col size="md-6">
+        <Container fluid>
+          <Row>
+            {/* <Col size="md-6">
             <Jumbotron>
               <h1>Suggest a Project to Work On?</h1>
             </Jumbotron>
@@ -101,17 +122,17 @@ class Projects extends Component {
               </FormBtn>
             </form>
           </Col> */}
-          <Col  size="md-6 sm-12">
-            {/* <Jumbotron> */}
+            <Col size="md">
+              {/* <Jumbotron> */}
               <h1 style={wB}>My Projects: </h1>
-            {/* </Jumbotron> */}
-            {this.state.projects.length ? (
-              <List >
-                {this.state.projects.map(project => (
-                  <ListItem  key={project.id}>
-                  {/* <a href={project.html_url}> */}
+              {/* </Jumbotron> */}
+              {this.state.projects.length ? (
+                <List>
+                  {this.state.projects.map(project => (
+                    <ListItem key={project.id}>
+                      {/* <a href={project.html_url}> */}
 
-                    {/* <Link 
+                      {/* <Link 
                     // href={project.html_url}  
                     to={project.html_url}
                      onClick={() => this.loadProjectURL(this.target.event, project.html_url)}
@@ -120,32 +141,49 @@ class Projects extends Component {
                     
                     > */}
                       <strong>
-                        <a href={project.html_url}>
-                        {project.name}
-                         </a>
-                         {/* by {project.contributors} */}
+                        <a href={project.html_url}>{project.name}</a>
+                        {/* by {project.contributors} */}
                       </strong>
                       <p>{project.description}</p>
-                    {/* </Link> */}
-                    {/* </a> */}
-                    <DeleteBtn onClick={() => this.deleteproject(project._id)} />
-                  </ListItem>
-                ))}
-              </List>
-            ) : (
-              //something is coming back from projects, or it would be displaying this
-              <h3 style={wB} >No Results to Display</h3>
-            )}
-          </Col>
-        </Row>
-      </Container>
+                      {project.homepage? (
+                        <iframe
+                          width="1000"
+                          height="600"
+                          title="Deployment Iframe"
+                          src={project.homepage}
+                        /> ):(
+                        <iframe
+                          width="1000"
+                          height="600"
+                          title="Project Iframe"
+                          src={
+                              "https://httpstatusdogs.com/img/404.jpg"
+                            }
+                        />
+                      )}
+
+                      {/* </Link> */}
+                      {/* </a> */}
+                      {/* <DeleteBtn
+                        onClick={() => this.deleteproject(project._id)}
+                      /> */}
+                    </ListItem>
+                  ))}
+                </List>
+              ) : (
+                //something is coming back from projects, or it would be displaying this
+                <h3 style={wB}>No Results to Display</h3>
+              )}
+            </Col>
+          </Row>
+        </Container>
       </div>
     );
   }
 }
 
-const wB={
-  background:"white"
-}
+const wB = {
+  background: "white"
+};
 
 export default Projects;
