@@ -147,15 +147,16 @@ class Projects extends Component {
                       <p>{project.description}</p>
                       {project.homepage? (
                         <iframe
-                          width="1000"
-                          height="600"
+                          width="800"
+                          height="500"
                           title="Deployment Iframe"
                           src={project.homepage}
                         /> ):(
                         <iframe
-                          width="1000"
-                          height="600"
-                          title="Project Iframe"
+                          width="800"
+                          height="500"
+                          // style={center}
+                          title="No Depoloyment Iframe"
                           src={
                               "https://httpstatusdogs.com/img/404.jpg"
                             }
@@ -185,5 +186,12 @@ class Projects extends Component {
 const wB = {
   background: "white"
 };
+
+const center={
+  textAlign: "center",
+  float: "center",
+  margin: "auto",
+}
+
 
 export default Projects;

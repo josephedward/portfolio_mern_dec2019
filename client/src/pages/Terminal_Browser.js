@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import Terminal from 'terminal-in-react';
-import {logs, showConcertInfo, showMovieInfo, showSomeInfo, showSongInfo, UserInputs} from "./liriBot/liri";
+// import {logs, showConcertInfo, showMovieInfo, showSomeInfo, showSongInfo, UserInputs} from "./liriBot/liri";
 
-import { execSync } from 'child_process';  // replace ^ if using ES modules
+// import { execSync } from 'child_process';  // replace ^ if using ES modules
 // var term = require( 'terminal-kit' ).terminal ;
 
-import {term} from 'terminal-kit'
+// import {term} from 'terminal-kit'
 // .terminal;
 
 class TerminalBrowser extends Component {
@@ -23,7 +23,7 @@ class TerminalBrowser extends Component {
         }}
       >
 
-{ term( 'Hello world!\n' ) } 
+{/* { term( 'Hello world!\n' ) }  */}
         <Terminal
          watchConsoleLogging 
         //  commandPassThrough={cmd => `-PassedThrough:${cmd}: stinky command not found`}
@@ -35,20 +35,21 @@ class TerminalBrowser extends Component {
             'open-google': () => window.open('https://www.google.com/', '_blank'),
             showmsg: this.showMsg,
             popup: () => alert('Terminal in React'),
-            liri: ()=>{
-              // var lir= require("../liriBot/liri");
-              // lir.showSongInfo()
-            //  lir.UserInputs("movie-this", "The Matrix")
-            // const output = execSync('node liri.js movie-this', { encoding: 'utf-8' });
+          //   liri: ()=>{
+          //     // var lir= require("../liriBot/liri");
+          //     // lir.showSongInfo()
+          //   //  lir.UserInputs("movie-this", "The Matrix")
+          //   // const output = execSync('node liri.js movie-this', { encoding: 'utf-8' });
 
-          }}
+          // }
+          }
           }
           descriptions={{
             'open-google': 'opens google.com',
             showmsg: 'shows a message',
             alert: 'alert', popup: 'alert'
           }}
-          msg='You can write anything here. Example - Hello! My name is Foo and I like Bar.'
+          msg="Type 'help' to get a list of filler commands. Check back soon"
         />
       </div>
     );
