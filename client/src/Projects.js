@@ -75,7 +75,7 @@ class Projects extends Component {
         Accept:"*/*",
         'Cache-Control':"no-cache",
         "Postman-Token":"9d4b0799-97d2-4f8b-945c-e31f72b4361e",
-        Host:"randomwordgenerator.com",
+        // Host:"randomwordgenerator.com",
         'Accept-Encoding':"gzip, deflate",
         Connection:"keep-alive",
         "Access-Control-Allow-Origin": true

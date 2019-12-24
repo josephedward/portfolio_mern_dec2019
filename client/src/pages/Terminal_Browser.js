@@ -40,7 +40,6 @@ class TerminalBrowser extends Component {
           //     // lir.showSongInfo()
           //   //  lir.UserInputs("movie-this", "The Matrix")
           //   // const output = execSync('node liri.js movie-this', { encoding: 'utf-8' });
-
           // }
           }
           }
