@@ -151,16 +151,8 @@ class Projects extends Component {
                           height="500"
                           title="Deployment Iframe"
                           src={project.homepage}
-                        /> ):(
-                        <iframe
-                          width="800"
-                          height="500"
-                          // style={center}
-                          title="No Depoloyment Iframe"
-                          src={
-                              "https://httpstatusdogs.com/img/404.jpg"
-                            }
-                        />
+                        /> ):(<div></div>
+                       
                       )}
 
                       {/* </Link> */}
