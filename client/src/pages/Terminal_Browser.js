@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
 import Terminal from 'terminal-in-react';
+import {logs, showConcertInfo, showMovieInfo, showSomeInfo, showSongInfo, UserInputs} from "./liriBot/liri";
 
-class Test extends Component {
+import { execSync } from 'child_process';  // replace ^ if using ES modules
+// var term = require( 'terminal-kit' ).terminal ;
+
+import {term} from 'terminal-kit'
+// .terminal;
+
+class TerminalBrowser extends Component {
   showMsg = () => 'Hello World'
-
+  
   render() {
     return (
       <div
@@ -15,7 +22,11 @@ class Test extends Component {
           width:"100vw"
         }}
       >
+
+{ term( 'Hello world!\n' ) } 
         <Terminal
+         watchConsoleLogging 
+        //  commandPassThrough={cmd => `-PassedThrough:${cmd}: stinky command not found`}
           color='lightgreen'
           backgroundColor='black'
           barColor='blue'
@@ -23,8 +34,15 @@ class Test extends Component {
           commands={{
             'open-google': () => window.open('https://www.google.com/', '_blank'),
             showmsg: this.showMsg,
-            popup: () => alert('Terminal in React')
+            popup: () => alert('Terminal in React'),
+            liri: ()=>{
+              // var lir= require("../liriBot/liri");
+              // lir.showSongInfo()
+            //  lir.UserInputs("movie-this", "The Matrix")
+            // const output = execSync('node liri.js movie-this', { encoding: 'utf-8' });
+
           }}
+          }
           descriptions={{
             'open-google': 'opens google.com',
             showmsg: 'shows a message',
@@ -37,4 +55,4 @@ class Test extends Component {
   }
 }
 
-export default Test;
+export default TerminalBrowser;

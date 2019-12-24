@@ -6,8 +6,12 @@ var keys = require("./keys.js");
 var Spotify = require("node-spotify-api");
 var spotify = new Spotify(keys.spotify);
 var fs = require("fs");
+var logs=require("./log.js");
+
 // var time = moment().format('HH:mm:ss');
 // var axios = require("axios");
+
+
 
 //vars to capture user inputs.
 var userOption = process.argv[2];
@@ -150,7 +154,8 @@ function showSomeInfo() {
 
 
 
-var logs=require("./log.js");
+
+module.exports ={logs, showConcertInfo, showMovieInfo, showSomeInfo, showSongInfo, UserInputs}
 
 
 //****************************************************************************************************************************************/
