@@ -127,7 +127,7 @@ class Projects extends Component {
               <h1 style={wB}>My Projects: </h1>
 
               <h3 style={bW} >
-              Visit deployment URL and diable mixed-content blocking for full functionality.
+              Visit deployment URL and disable mixed-content blocking for full functionality.
               </h3>
               {/* </Jumbotron> */}
               {this.state.projects.length ? (
