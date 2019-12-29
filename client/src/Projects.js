@@ -125,6 +125,10 @@ class Projects extends Component {
             <Col size="md">
               {/* <Jumbotron> */}
               <h1 style={wB}>My Projects: </h1>
+
+              <h3 style={bW} >
+              Visit deployment URL and diable mixed-content blocking for full functionality.
+              </h3>
               {/* </Jumbotron> */}
               {this.state.projects.length ? (
                 <List>
@@ -143,7 +147,11 @@ class Projects extends Component {
                       <strong>
                         <a href={project.html_url}>{project.name}</a>
                         {/* by {project.contributors} */}
+
                       </strong>
+                      <br/>
+                      <a style={orange} href={project.homepage}>{project.homepage}</a>
+                      {/* <br/> */}
                       <p>{project.description}</p>
                       {project.homepage? (
                         <iframe
@@ -178,6 +186,15 @@ class Projects extends Component {
 const wB = {
   background: "white"
 };
+
+const orange={
+  color:"orange"
+}
+
+const bW={
+  background:"black",
+  color:"white"
+}
 
 const center={
   textAlign: "center",
