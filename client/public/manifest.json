@@ -1,6 +1,6 @@
 {
-  "short_name": "Joe's Portfolio",
-  "name": "Joseph's MERN Portfolio",
+  "short_name": "Joseph's Portfolio",
+  "name": "Joseph's MERN stack (React-Router) Portfolio",
   "icons": [
     {
       "src": "favicon.ico",

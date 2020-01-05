@@ -1,33 +1,59 @@
-import React from "react";
+import React, { Component } from "react";
+import { Menu } from "semantic-ui-react";
+// import testImage from "./matrix.jpeg";
 
-function Nav() {
-  return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-success">
-      <a className="navbar-brand" href="/">
-        Joseph Edward's Porfolio
-      </a>
+class Nav extends Component {
+  render() {
+    // const { activeItem } = this.state
 
-      <hr />
-      <a style={{ color: "black", margin: "10px" }} href="/">
-        Home{" "}
-      </a>
-      <a style={{ color: "black", margin: "10px" }} href="/projects">
-        Projects{" "}
-      </a>
-      <a style={{ color: "black", margin: "10px" }} href="/terminal">
-        Terminal{" "}
-      </a>
-      <a style={{ color: "black", margin: "10px" }} 
-      // href="https://jeffhuang.com/designed_to_last/"
-      >
+    return (
+      <nav className="navbar navbar-expand-lg navbar-dark" style={navStyle}>
+        <a className="navbar-brand" href="/" style={txtStyle2}>
+          Joseph Edward, Web Developer & Vampire Hunter
+        </a>
 
-    {/* Need the to create plain HTML site */}
-        Persistent{" "}
-      </a>
- 
-      {/* <a style={{color:"black",margin:"10px"}} href="https://josephedward.github.io/portfolio-site/">jQuery 'Concept' Portfolio<span role="img" aria-label="smile emoji"> 😁 </span></a> */}
-    </nav>
-  );
+        <hr />
+        <a style={{ ...txtStyle }} href="/">
+          Home{" "}
+        </a>
+        <a style={{ ...txtStyle }} href="/projects">
+          Projects{" "}
+        </a>
+        <a style={{ ...txtStyle }} href="/terminal">
+          Terminal{" "}
+        </a>
+        <a style={{ ...txtStyle }}>
+          {
+            // href="https://jeffhuang.com/designed_to_last/"
+            /* Need the to create plain HTML site */
+          }
+          Persistent{" "}
+        </a>
+      </nav>
+    );
+  }
 }
 
 export default Nav;
+
+const navStyle = {
+  //  "background-image": `url('${testImage}')`,
+
+  "background-color": "red",
+  position:"fixed",
+  width:"100%",
+  zIndex:"10"
+
+};
+
+const txtStyle = {
+  color: "white",
+  margin: "10px"
+};
+
+const txtStyle2 = {
+  color: "black",
+  fontSize: "20px",
+  margin: "10px",
+  // backgroundColor: "white"
+};

@@ -122,16 +122,16 @@ class Projects extends Component {
               </FormBtn>
             </form>
           </Col> */}
-            <Col size="md">
+            <Col size="md" style={mTop50}>
               {/* <Jumbotron> */}
-              <h1 style={wB}>My Projects: </h1>
+              <h1 style={{...wB,...mTop50}}>My Projects: </h1>
 
               <h3 style={bW} >
               Visit deployment URL and disable mixed-content blocking for full functionality.
               </h3>
               {/* </Jumbotron> */}
               {this.state.projects.length ? (
-                <List>
+                <List >
                   {this.state.projects.map(project => (
                     <ListItem key={project.id}>
                       {/* <a href={project.html_url}> */}
@@ -145,7 +145,7 @@ class Projects extends Component {
                     
                     > */}
                       <strong>
-                        <a href={project.html_url}>{project.name}</a>
+                        <a style={white} href={project.html_url}>{project.name}</a>
                         {/* by {project.contributors} */}
 
                       </strong>
@@ -183,9 +183,17 @@ class Projects extends Component {
   }
 }
 
+const mTop50={
+  marginTop:"75px"
+}
+
 const wB = {
   background: "white"
 };
+
+const white={
+  // color:"white"
+}
 
 const orange={
   color:"orange"

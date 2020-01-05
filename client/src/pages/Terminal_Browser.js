@@ -29,7 +29,7 @@ class TerminalBrowser extends Component {
         //  commandPassThrough={cmd => `-PassedThrough:${cmd}: stinky command not found`}
           color='lightgreen'
           backgroundColor='black'
-          barColor='blue'
+          barColor='white'
           style={{ fontWeight: "bold", fontSize: "1em" }}
           commands={{
             'open-google': () => window.open('https://www.google.com/', '_blank'),

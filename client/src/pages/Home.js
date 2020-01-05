@@ -6,7 +6,7 @@ class Home extends Component{
     render(){
         return(
             <div >
-                <iframe  width="100%" height="700" title="Joe's Old Site" src="https://josephedward.github.io/jq_personal/"/>
+                <iframe style={mTop75}  width="100%" height="750px" title="Joe's Old Site" src="https://josephedward.github.io/jq_personal/"/>
             </div>
         );
     }
@@ -16,3 +16,6 @@ class Home extends Component{
 
 export default Home;
 
+const mTop75={
+    marginTop:"75px"
+}
