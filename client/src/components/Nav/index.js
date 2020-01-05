@@ -9,7 +9,7 @@ class Nav extends Component {
     return (
       <nav className="navbar navbar-expand-lg navbar-dark" style={navStyle}>
         <a className="navbar-brand" href="/" style={txtStyle2}>
-          Joseph Edward, Web Developer & Vampire Hunter
+          Joseph Edward, Web Developer/Vampire Hunter
         </a>
 
         <hr />
