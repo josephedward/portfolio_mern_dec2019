@@ -11,22 +11,22 @@ class Nav extends Component {
       // style={navStyle}
       >
         <a className="navbar-brand" href="/" 
-        // style={txtStyle2}
+        style={txtStyle2}
         >
           Joseph Edward, Web Developer
         </a>
 
         <hr />
-        <a style={{ ...txtStyle }} href="/">
+        <a style={{ ...txtStyle2 }} href="/">
           Home{" "}
         </a>
-        <a style={{ ...txtStyle }} href="/projects">
+        <a style={{ ...txtStyle2 }} href="/projects">
           Projects{" "}
         </a>
-        <a style={{ ...txtStyle }} href="/terminal">
+        <a style={{ ...txtStyle2 }} href="/terminal">
           Terminal{" "}
         </a>
-        <a style={{ ...txtStyle }}>
+        <a style={{ ...txtStyle2 }}>
           {
             // href="https://jeffhuang.com/designed_to_last/"
             /* Need the to create plain HTML site */
@@ -50,10 +50,10 @@ const navStyle = {
 
 };
 
-const txtStyle = {
-  color: "white",
-  margin: "10px"
-};
+// const txtStyle = {
+//   color: "white",
+//   margin: "10px"
+// };
 
 const txtStyle2 = {
   color: "black",
