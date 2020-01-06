@@ -7,33 +7,34 @@ class Nav extends Component {
     // const { activeItem } = this.state
 
     return (
-      <nav className="navbar navbar-expand-lg navbar-dark bg-danger" 
+      <Menu className="navbar navbar-expand-lg navbar-dark bg-danger" 
       // style={navStyle}
+      stackable
       >
-        <a className="navbar-brand" href="/" 
+        <Menu.Item className="navbar-brand" href="/" 
         style={txtStyle2}
         >
           Joseph Edward, Web Developer
-        </a>
+        </Menu.Item>
 
         <hr />
-        <a style={{ ...txtStyle2 }} href="/">
+        <Menu.Item style={{ ...txtStyle2 }} href="/">
           Home{" "}
-        </a>
-        <a style={{ ...txtStyle2 }} href="/projects">
+        </Menu.Item>
+        <Menu.Item style={{ ...txtStyle2 }} href="/projects">
           Projects{" "}
-        </a>
-        <a style={{ ...txtStyle2 }} href="/terminal">
+        </Menu.Item>
+        <Menu.Item style={{ ...txtStyle2 }} href="/terminal">
           Terminal{" "}
-        </a>
-        <a style={{ ...txtStyle2 }}>
+        </Menu.Item>
+        <Menu.Item style={{ ...txtStyle2 }}>
           {
             // href="https://jeffhuang.com/designed_to_last/"
             /* Need the to create plain HTML site */
           }
           Persistent{" "}
-        </a>
-      </nav>
+        </Menu.Item>
+      </Menu>
     );
   }
 }
@@ -43,11 +44,12 @@ export default Nav;
 const navStyle = {
   //  "background-image": `url('${testImage}')`,
 
-  "background-color": "red",
-  position:"fixed",
-  width:"100%",
-  zIndex:"10"
+  // "background-color": "red",
+  // position:"fixed",
+  // width:"100%",
+  // zIndex:"10"
 
+    marginBottom:"0px"
 };
 
 // const txtStyle = {
@@ -57,7 +59,13 @@ const navStyle = {
 
 const txtStyle2 = {
   color: "black",
-  fontSize: "20px",
-  margin: "10px",
+  // fontSize: "20px",
+  // fontOutline:"red solid 3px",
+
+  // "text-shadow": "black 0px 0px 1px",
+  // "-webkit-font-smoothing": "antialiased",
+  // border: "3px solid black",
+  // fontFamily:"helvetica",
+  // margin: "10px",
   // backgroundColor: "white"
 };

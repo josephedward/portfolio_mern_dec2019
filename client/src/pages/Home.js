@@ -8,7 +8,7 @@ class Home extends Component{
             <div >
                 <iframe 
                 // style={mTop75} 
-                 width="100%" height="725px" title="Joe's Old Site" src="https://josephedward.github.io/jq_personal/"/>
+                 width="100%" height="675px" title="Joe's Old Site" src="https://josephedward.github.io/jq_personal/"/>
             </div>
         );
     }
@@ -18,6 +18,6 @@ class Home extends Component{
 
 export default Home;
 
-const mTop75={
-    marginTop:"75px"
-}
+// const mTop75={
+//     marginTop:"75px"
+// }

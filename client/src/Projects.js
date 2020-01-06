@@ -2,12 +2,11 @@ import React, { Component } from "react";
 // import DeleteBtn from "./components/DeleteBtn";
 // import Jumbotron from "./components/Jumbotron";
 import API from "./utils/API";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { Col, Row, Container } from "./components/Grid";
 import { List, ListItem } from "./components/List";
-import { Input, TextArea, FormBtn } from "./components/Form";
-import Axios from "axios";
-// import caller from "../../../gAPI";
+// import { Input, TextArea, FormBtn } from "./components/Form";
+// import Axios from "axios";
 // import {List} from "semantic-ui-react";
 
 class Projects extends Component {
@@ -204,11 +203,11 @@ const bW={
   color:"white"
 }
 
-const center={
-  textAlign: "center",
-  float: "center",
-  margin: "auto",
-}
+// const center={
+//   textAlign: "center",
+//   float: "center",
+//   margin: "auto",
+// }
 
 
 export default Projects;
