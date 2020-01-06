@@ -7,9 +7,13 @@ class Nav extends Component {
     // const { activeItem } = this.state
 
     return (
-      <nav className="navbar navbar-expand-lg navbar-dark" style={navStyle}>
-        <a className="navbar-brand" href="/" style={txtStyle2}>
-          Joseph Edward, Web Developer/Vampire Hunter
+      <nav className="navbar navbar-expand-lg navbar-dark bg-danger" 
+      // style={navStyle}
+      >
+        <a className="navbar-brand" href="/" 
+        // style={txtStyle2}
+        >
+          Joseph Edward, Web Developer
         </a>
 
         <hr />

@@ -122,9 +122,9 @@ class Projects extends Component {
               </FormBtn>
             </form>
           </Col> */}
-            <Col size="md" style={mTop50}>
+            <Col size="md" >
               {/* <Jumbotron> */}
-              <h1 style={{...wB,...mTop50}}>My Projects: </h1>
+              <h1 style={{...wB}}>My Projects: </h1>
 
               <h3 style={bW} >
               Visit deployment URL and disable mixed-content blocking for full functionality.
@@ -155,8 +155,8 @@ class Projects extends Component {
                       <p>{project.description}</p>
                       {project.homepage? (
                         <iframe
-                          width="800"
-                          height="500"
+                          width="100%"
+                          height="800"
                           title="Deployment Iframe"
                           src={project.homepage}
                         /> ):(<div></div>
@@ -183,9 +183,9 @@ class Projects extends Component {
   }
 }
 
-const mTop50={
-  marginTop:"75px"
-}
+// const mTop50={
+//   marginTop:"75px"
+// }
 
 const wB = {
   background: "white"
