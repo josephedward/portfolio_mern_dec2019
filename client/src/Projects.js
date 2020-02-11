@@ -1,13 +1,8 @@
 import React, { Component } from "react";
-// import DeleteBtn from "./components/DeleteBtn";
-// import Jumbotron from "./components/Jumbotron";
 import API from "./utils/API";
-// import { Link } from "react-router-dom";
 import { Col, Row, Container } from "./components/Grid";
 import { List, ListItem } from "./components/List";
-// import { Input, TextArea, FormBtn } from "./components/Form";
-// import Axios from "axios";
-// import {List} from "semantic-ui-react";
+import { Responsive, Segment } from "semantic-ui-react";
 
 class Projects extends Component {
   state = {
@@ -62,116 +57,62 @@ class Projects extends Component {
   };
 
   loadProjectURL(e, url) {
-    // e.preventDefault();
     window.location.replace(url);
   }
 
-
-   requestOptions = {
-    method: 'GET',
+  requestOptions = {
+    method: "GET",
     headers: {
-        'User-Agent':"PostmanRuntime/7.21.0",
-        Accept:"*/*",
-        'Cache-Control':"no-cache",
-        "Postman-Token":"9d4b0799-97d2-4f8b-945c-e31f72b4361e",
-        // Host:"randomwordgenerator.com",
-        'Accept-Encoding':"gzip, deflate",
-        Connection:"keep-alive",
-        "Access-Control-Allow-Origin": true
-      },
-    redirect: 'follow'
+      "User-Agent": "PostmanRuntime/7.21.0",
+      Accept: "*/*",
+      "Cache-Control": "no-cache",
+      "Postman-Token": "9d4b0799-97d2-4f8b-945c-e31f72b4361e",
+      "Accept-Encoding": "gzip, deflate",
+      Connection: "keep-alive",
+      "Access-Control-Allow-Origin": true
+    },
+    redirect: "follow"
   };
-  
-  
+
   render() {
+
     return (
-      <div
-      //  style={{"background-color":"black"}}
-      >
+      
+      <div>
         <Container fluid>
           <Row>
-            {/* <Col size="md-6">
-            <Jumbotron>
-              <h1>Suggest a Project to Work On?</h1>
-            </Jumbotron>
-            <form>
-              <Input
-                value={this.state.title}
-                onChange={this.handleInputChange}
-                name="title"
-                placeholder="Title (required)"
-              />
-              <Input
-                value={this.state.contributors}
-                onChange={this.handleInputChange}
-                name="contributors"
-                placeholder="contributors (required)"
-              />
-              <TextArea
-                value={this.state.description}
-                onChange={this.handleInputChange}
-                name="description"
-                placeholder="description (Optional)"
-              />
-              <FormBtn
-                disabled={!(this.state.contributors && this.state.title)}
-                onClick={this.handleFormSubmit}
-              >
-                Submit project
-              </FormBtn>
-            </form>
-          </Col> */}
-            <Col size="md" >
-              {/* <Jumbotron> */}
-              <h1 style={{...wB}}>My Projects: </h1>
-
-              <h3 style={bW} >
-              Visit deployment URL and disable mixed-content blocking for full functionality.
+            <Col size="md">
+              <h1 style={{ ...wB }}>My Projects: </h1>
+              <h3 style={bW}>
+                Visit deployment URL and disable mixed-content blocking for full
+                functionality.
               </h3>
-              {/* </Jumbotron> */}
               {this.state.projects.length ? (
-                <List >
+                <List>
                   {this.state.projects.map(project => (
                     <ListItem key={project.id}>
-                      {/* <a href={project.html_url}> */}
-
-                      {/* <Link 
-                    // href={project.html_url}  
-                    to={project.html_url}
-                     onClick={() => this.loadProjectURL(this.target.event, project.html_url)}
-                    // {project.html_url}
-                    // {"/projects/" + project.name}
-                    
-                    > */}
                       <strong>
-                        <a style={white} href={project.html_url}>{project.name}</a>
-                        {/* by {project.contributors} */}
-
+                        <a href={project.html_url}>{project.name}</a>
                       </strong>
-                      <br/>
-                      <a style={orange} href={project.homepage}>{project.homepage}</a>
-                      {/* <br/> */}
+                      <br />
+                      <a style={orange} href={project.homepage}>
+                        {project.homepage}
+                      </a>
                       <p>{project.description}</p>
-                      {project.homepage? (
+                      {project.homepage ? (
                         <iframe
                           width="100%"
                           height="800"
                           title="Deployment Iframe"
                           src={project.homepage}
-                        /> ):(<div></div>
-                       
+                        />
+                      ) : (
+                        <div></div>
                       )}
-
-                      {/* </Link> */}
-                      {/* </a> */}
-                      {/* <DeleteBtn
-                        onClick={() => this.deleteproject(project._id)}
-                      /> */}
                     </ListItem>
                   ))}
                 </List>
               ) : (
-                //something is coming back from projects, or it would be displaying this
                 <h3 style={wB}>No Results to Display</h3>
               )}
             </Col>
@@ -182,32 +123,17 @@ class Projects extends Component {
   }
 }
 
-// const mTop50={
-//   marginTop:"75px"
-// }
-
 const wB = {
   background: "white"
 };
 
-const white={
-  // color:"white"
-}
+const orange = {
+  color: "orange"
+};
 
-const orange={
-  color:"orange"
-}
-
-const bW={
-  background:"black",
-  color:"white"
-}
-
-// const center={
-//   textAlign: "center",
-//   float: "center",
-//   margin: "auto",
-// }
-
+const bW = {
+  background: "black",
+  color: "white"
+};
 
 export default Projects;

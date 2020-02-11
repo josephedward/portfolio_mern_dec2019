@@ -8,10 +8,11 @@ class Nav extends Component {
 
     return (
       <Menu className="navbar navbar-expand-lg navbar-dark bg-danger" 
-      // style={navStyle}
+      style={navStyle}
       stackable
       >
-        <Menu.Item className="navbar-brand" href="/" 
+        <Menu.Item 
+        className="navbar-brand" href="/" 
         style={txtStyle2}
         >
           Joseph Edward, Web Developer
@@ -48,8 +49,8 @@ const navStyle = {
   // position:"fixed",
   // width:"100%",
   // zIndex:"10"
-
-    marginBottom:"0px"
+    marginBottom:"0px",
+    color: "white"
 };
 
 // const txtStyle = {
@@ -58,8 +59,10 @@ const navStyle = {
 // };
 
 const txtStyle2 = {
-  color: "black",
-  // fontSize: "20px",
+  color: "white",
+  // "-webkit-text-stroke-width": "1px",
+  //   "-webkit-text-stroke-color": "black",
+  // fontSize: "20px", 
   // fontOutline:"red solid 3px",
 
   // "text-shadow": "black 0px 0px 1px",
