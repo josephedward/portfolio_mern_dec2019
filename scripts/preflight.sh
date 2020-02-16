@@ -1,6 +1,9 @@
 brew services start mongodb-community
 echo 'mongo started'
 
+# prevents 
+sudo su
+
 echo 'attempting to close ports'
 # sudo lsof -P | grep ‘:8888’ | awk '{print $2}' | xargs kill -9
 # sudo lsof -P | grep ‘:8887’ | awk '{print $2}' | xargs kill -9
