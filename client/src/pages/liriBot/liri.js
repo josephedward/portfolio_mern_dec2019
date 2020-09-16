@@ -45,7 +45,7 @@ function UserInputs(userOption, inputParameter) {
 //Funtion for Concert Info: Bands in Town
 function showConcertInfo(inputParameter) {
     if (inputParameter === undefined||inputParameter==="") {
-        inputParameter = "Wu-Tang Clan";
+        inputParameter = "The Weekend";
       }   
       // console.log(inputParameter)
   var queryUrl =
@@ -120,6 +120,7 @@ function showSongInfo(inputParameter) {
   );
 }
 
+
 //Funtion for Movie Info: OMDB
 function showMovieInfo(inputParameter) {
   // var inputParameter = process.argv.slice(3).join(' ');
@@ -127,7 +128,7 @@ function showMovieInfo(inputParameter) {
   console.log("inputParameter : ",inputParameter)
 
     if (inputParameter === undefined||inputParameter==="") {
-      inputParameter = "Fight Club";
+      inputParameter = "The Matrix";
     }
     var queryUrl =
       "http://www.omdbapi.com/?t=" +

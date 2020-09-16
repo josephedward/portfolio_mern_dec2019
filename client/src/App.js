@@ -28,7 +28,3 @@ function App() {
 export default App;
 
 
-          // {/* Did it even do anything?  */}
-          // {/* <Route exact path="/" component={projects} /> */}
-          // {/* <Route exact path="https://josephedward.github.io/portfolio-site/" /> */}
-          // {/* <Route exact path="/jq_portfolio" component={jQ_Portfolio}/> */}

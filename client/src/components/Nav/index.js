@@ -63,8 +63,8 @@ const txtStyle2 = {
   fontWeight:"bold",
   color:"orange",
   // "margin-left":"25px",
-  paddingLeft:"75px",
-  paddingRight:"75px"
+  paddingLeft:"5%",
+  paddingRight:"5%"
 
   // width:"100%"
   // color: "white",

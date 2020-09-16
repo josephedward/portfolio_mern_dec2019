@@ -5,10 +5,10 @@ class Home extends Component{
 
     render(){
         return(
-            <div >
+            <div style={{height:"1000px"}}>
                 <iframe 
                 // style={mTop75} 
-                 width="100%" height="675px" title="Joe's Old Site" src="https://josephedward.github.io/jq_personal/"/>
+                 width="100%" height="1000px" title="Joe's Old Site" src="https://josephedward.github.io/jq_personal/"/>
             </div>
         );
     }
