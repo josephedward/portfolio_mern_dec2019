@@ -21,7 +21,7 @@ class Nav extends Component {
           Joseph Edward, Web Developer
         </Menu.Item>
 
-        <hr />
+        {/* <hr /> */}
         <Menu.Item style={{ ...txtStyle2 }} href="/">
           Home{" "}
         </Menu.Item>
@@ -44,16 +44,13 @@ export default Nav;
 const navStyle = {
     marginBottom:"0px",
     color: "black",
-    border:"3px solid red",
-    outline:"3px solid aqua",
+    border:"5px solid purple",
+    outline:"5px solid blue",
     // backgroundColor:"black",
-    background: "rgba(0,0,0,0)"
-    // border:"1px solid blue",
-    // textBorder:"1px solid blue"
-
-    // "-webkit-text-shadow": "1px black",
-    // fontOutline:"1pz black"
-    // textOutline:"3px solid black"
+    background: "rgba(0,0,0,0)",
+    width:"100%",
+    display:"flex",
+    justifyContent:"center"
 };
 
 
@@ -61,10 +58,15 @@ const txtStyle2 = {
   fontFamily: "Helvetica",
   "-webkit-text-stroke-width": "1px",
   "-webkit-text-stroke-color": "black",
-  backgroundColor:"blue",
+  backgroundColor:"aqua",
   fontSize: "25px",
   fontWeight:"bold",
-  color:"lightgreen",
+  color:"orange",
+  // "margin-left":"25px",
+  paddingLeft:"75px",
+  paddingRight:"75px"
+
+  // width:"100%"
   // color: "white",
   // border:"1px solid silver"
   

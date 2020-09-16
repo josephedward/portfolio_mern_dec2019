@@ -9,7 +9,7 @@ var fs = require("fs");
 var logs=require("./log.js");
 
 // var time = moment().format('HH:mm:ss');
-// var axios = require("axios");
+var axios = require("axios");
 
 
 
@@ -47,34 +47,53 @@ function showConcertInfo(inputParameter) {
     if (inputParameter === undefined||inputParameter==="") {
         inputParameter = "Wu-Tang Clan";
       }   
+      // console.log(inputParameter)
   var queryUrl =
     "https://rest.bandsintown.com/artists/" +
     inputParameter +
     "/events?app_id=codingbootcamp";
-  request(queryUrl, function(error, response, body) {
-    // If the request is successful
-    if (!error && response.statusCode === 200) {
-      try {
-        var concerts = JSON.parse(body);
-        logs.logConcerts(concerts);
-        for (var i = 0; i < concerts.length; i++) {
-          console.log("**********EVENT INFO*********");
-          console.log(i);
-          console.log("Name of the Venue: " + concerts[i].venue.name);
-          console.log("Venue Location: " + concerts[i].venue.city);
-          console.log("Date of the Event: " + concerts[i].datetime);
-          console.log("*****************************");
-        }        
-      } catch (error) {
-        console.log("Bad Request. Please try again.");
-      }
 
-    } 
-  });
+    axios
+    .get(queryUrl)
+    .then(function (response) {
+      var concerts = response.data;
+      for (var i = 0; i < concerts.length; i++) {
+                console.log("**********EVENT INFO*********");
+                console.log(i);
+                console.log("Name of the Venue: " + concerts[i].venue.name);
+                console.log("Venue Location: " + concerts[i].venue.city);
+                console.log("Date of the Event: " + concerts[i].datetime);
+                console.log("*****************************");
+              }
+    })
+    .catch(function (error) {
+      console.log("error :",error);
+    });
+  // request(queryUrl, function(error, response, body) {
+  //   // If the request is successful
+  //   if (!error && response.statusCode === 200) {
+  //     try {
+  //       var concerts = JSON.parse(body);
+  //       logs.logConcerts(concerts);
+  //       for (var i = 0; i < concerts.length; i++) {
+  //         console.log("**********EVENT INFO*********");
+  //         console.log(i);
+  //         console.log("Name of the Venue: " + concerts[i].venue.name);
+  //         console.log("Venue Location: " + concerts[i].venue.city);
+  //         console.log("Date of the Event: " + concerts[i].datetime);
+  //         console.log("*****************************");
+  //       }        
+  //     } catch (error) {
+  //       console.log("Bad Request. Please try again.");
+  //     }
+
+  //   } 
+  // });
 }
 
 //Funtion for Music Info: Spotify
 function showSongInfo(inputParameter) {
+  
   if (inputParameter === undefined||inputParameter==="") {
     inputParameter = "Separate Ways";
   }
@@ -103,7 +122,10 @@ function showSongInfo(inputParameter) {
 
 //Funtion for Movie Info: OMDB
 function showMovieInfo(inputParameter) {
+  // var inputParameter = process.argv.slice(3).join(' ');
  
+  console.log("inputParameter : ",inputParameter)
+
     if (inputParameter === undefined||inputParameter==="") {
       inputParameter = "Fight Club";
     }
@@ -111,28 +133,28 @@ function showMovieInfo(inputParameter) {
       "http://www.omdbapi.com/?t=" +
       inputParameter +
       "&y=&plot=short&apikey=b3c0b435";
-    request(queryUrl, function(error, response, body) {
-      
-      // If the request is successful
-      if (!error && response.statusCode === 200){
-            try{
-        var movie = JSON.parse(body);
-        logs.logMovie(movie);
-        console.log("**********MOVIE INFO*********");
-        console.log("Title: " + movie.Title);
-        console.log("Release Year: " + movie.Year);
-        console.log("IMDB Rating: " + movie.imdbRating);
-        console.log("Rotten Tomatoes Rating: " + movie.Ratings[1].Value);
-        console.log("Country of Production: " + movie.Country);
-        console.log("Language: " + movie.Language);
-        console.log("Plot: " + movie.Plot);
-        console.log("Actors: " + movie.Actors);
-        console.log("*****************************");
-      }catch (error) {
-          console.log("Bad Request. Please try again.");
-        }
-       
-      } 
+
+    axios
+    .get(queryUrl)
+    .then(function (response) {
+      // console.log(response)
+      var movie = response.data;
+      // console.log(movie)
+      // console.log(movie.data)
+      // console.log(movie.Actors)
+      console.log("**********MOVIE INFO*********");
+      console.log("Title: " + movie.Title);
+      console.log("Release Year: " + movie.Year);
+      console.log("IMDB Rating: " + movie.imdbRating);
+      console.log("Rotten Tomatoes Rating: " + movie.Ratings[1].Value);
+      console.log("Country of Production: " + movie.Country);
+      console.log("Language: " + movie.Language);
+      console.log("Plot: " + movie.Plot);
+      console.log("Actors: " + movie.Actors);
+      console.log("*****************************");
+    })
+    .catch(function (error) {
+      console.log("error :",error);
     });
 }
 

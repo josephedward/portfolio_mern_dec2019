@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Terminal from 'terminal-in-react';
 // import {logs, showConcertInfo, showMovieInfo, showSomeInfo, showSongInfo, UserInputs} from "./liriBot/liri";
+import * as liri from "./liriBot/liri.js"
+
 
 // import { execSync } from 'child_process';  // replace ^ if using ES modules
 // var term = require( 'terminal-kit' ).terminal ;
@@ -35,18 +37,28 @@ class TerminalBrowser extends Component {
             'open-google': () => window.open('https://www.google.com/', '_blank'),
             showmsg: this.showMsg,
             popup: () => alert('Terminal in React'),
-          //   liri: ()=>{
-          //     // var lir= require("../liriBot/liri");
-          //     // lir.showSongInfo()
-          //   //  lir.UserInputs("movie-this", "The Matrix")
-          //   // const output = execSync('node liri.js movie-this', { encoding: 'utf-8' });
-          // }
+            'movie-this': 
+            // (args) =>  
+            (args, print, runCommand) => {
+            const text = args.slice(1).join(' ');
+            console.log(text)
+            liri.showMovieInfo(text)
+            },
+            'concert-this':
+            (args, print, runCommand) => {
+            const text = args.slice(1).join(' ');
+            console.log(text)
+            liri.showConcertInfo(text)
+            }
           }
           }
           descriptions={{
             'open-google': 'opens google.com',
             showmsg: 'shows a message',
-            alert: 'alert', popup: 'alert'
+            alert: 'alert', 
+            popup: 'alert',
+            "movie-this": "Search the IMDB database for movie results, e.g. 'movie-this Batman'.",
+            "concert-this": "Search the Events in Town database for concert information, e.g. 'concert-this The Weekend'."
           }}
           msg="Type 'help' to get a list of filler commands. Check back soon"
         />

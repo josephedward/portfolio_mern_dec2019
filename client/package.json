@@ -1,5 +1,5 @@
 {
-  "name": "Joe_Portfolio_React_Client",
+  "name": "joe_portfolio_react_client",
   "version": "0.0.1",
   "private": true,
   "proxy": "http://localhost:8888/",

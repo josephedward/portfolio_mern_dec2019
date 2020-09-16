@@ -38,8 +38,8 @@ return mRs;
 }
 
 callGHAPI().then((res)=>{
- //useful for debugging 
-  console.log(res)
+   //useful for debugging 
+  // console.log(res)
 });
 
 module.exports= {callGHAPI};

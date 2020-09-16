@@ -5,6 +5,8 @@
  *
  */
 const fetch = require('node-fetch');
+require('dotenv').config();
+
 
 class HttpException extends Error {
   constructor({message, status, statusText, url}) {
@@ -53,7 +55,6 @@ class GitHubClient {
       _response.data = jsonData;
       return _response;
     })
-
   }
 
   getData({path}) {
