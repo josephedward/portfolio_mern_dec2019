@@ -2,7 +2,7 @@
 require("dotenv").config();
 //variables
 var request = require("request");
-var keys = require("./keys.js");
+
 
 
 var Spotify = require("node-spotify-api");
@@ -10,6 +10,7 @@ var spotify;
 let omdbKey;
 if(process.env.NODE_ENV == "development")
 {
+  var keys = require("./keys.js");
   spotify = new Spotify(keys.spotify)
   omdbKey = keys['OMDB_KEY']
 }
