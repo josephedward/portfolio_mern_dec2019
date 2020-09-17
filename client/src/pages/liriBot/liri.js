@@ -9,13 +9,16 @@ let prod_spot_keys={
   key:process.env['SPOT_KEY']
 }
 
+console.log(process.env)
 if(process.env.NODE_ENV == "development")
 {
+  console.log("dev env")
   var keys = require("./keys.js");
   spotify = new Spotify(keys.spotify)
   omdbKey = keys['OMDB_KEY']
 }
 else{
+  console.log("prod env")
  spotify = new Spotify(prod_spot_keys)
  omdbKey = process.env.OMDB_KEY 
 }
@@ -171,60 +174,5 @@ function showSomeInfo() {
   });
 }
 
-
-
-
-
 module.exports ={logs, showConcertInfo, showMovieInfo, showSomeInfo, showSongInfo, UserInputs}
 
-
-//****************************************************************************************************************************************/
-// module.exports={getRottenTomatoesRatingValue,getRottenTomatoesRatingObject};
-// function showConcertInfo0(inputParameter){
-
-// // Grab the axios package...
-// var axios = require("axios");
-
-// // Then run a request with axios to the OMDB API with the movie specified
-// var queryUrl = "https://rest.bandsintown.com/artists/" + inputParameter + "/events?app_id=codingbootcamp";
-
-// axios
-//   .get(queryUrl)
-//   .then(function(response) {
-
-//     var concerts = JSON.parse(response.data);
-//     for (var i = 0; i < concerts.length; i++) {
-//         console.log("**********EVENT INFO*********");
-//         //fs.appendFileSync("log.txt", "**********EVENT INFO*********\n");//Append in log.txt file
-//         console.log(i);
-//         //fs.appendFileSync("log.txt", i+"\n");
-//         console.log("Name of the Venue: " + concerts[i].venue.name);
-//         //fs.appendFileSync("log.txt", "Name of the Venue: " + concerts[i].venue.name+"\n");
-//         console.log("Venue Location: " +  concerts[i].venue.city);
-//         //fs.appendFileSync("log.txt", "Venue Location: " +  concerts[i].venue.city+"\n");
-//         console.log("Date of the Event: " +  concerts[i].datetime);
-//         //fs.appendFileSync("log.txt", "Date of the Event: " +  concerts[i].datetime+"\n");
-//         console.log("*****************************");
-//         //fs.appendFileSync("log.txt", "*****************************"+"\n");
-//     }
-
-// })
-//   .catch(function(error) {
-//     if (error.response) {
-//       // The request was made and the server responded with a status code
-//       // that falls out of the range of 2xx
-//       console.log(error.response.data);
-//       console.log(error.response.status);
-//       console.log(error.response.headers);
-//     } else if (error.request) {
-//       // The request was made but no response was received
-//       // `error.request` is an object that comes back with details pertaining to the error that occurred.
-//       console.log(error.request);
-//     } else {
-//       // Something happened in setting up the request that triggered an Error
-//       console.log("Error", error.message);
-//     }
-//     console.log(error.config);
-//   });
-
-// }
