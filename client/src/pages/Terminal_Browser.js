@@ -10,10 +10,14 @@ import * as liri from "./liriBot/liri.js"
 // import {term} from 'terminal-kit'
 // .terminal;
 
+
 class TerminalBrowser extends Component {
+
+
   showMsg = () => 'Hello World'
   
   render() {
+    console.log("process.env : ",process.env);
     return (
       <div
         style={{

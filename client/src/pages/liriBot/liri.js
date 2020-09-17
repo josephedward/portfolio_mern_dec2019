@@ -3,8 +3,20 @@ require("dotenv").config();
 //variables
 var request = require("request");
 var keys = require("./keys.js");
+
+
 var Spotify = require("node-spotify-api");
-var spotify = new Spotify(keys.spotify||prod_spot_keys)
+var spotify;
+let omdbKey;
+if(process.env.NODE_ENV == "development")
+{
+  spotify = new Spotify(keys.spotify)
+  omdbKey = keys['OMDB_KEY']
+}
+else{
+ spotify = new Spotify(prod_spot_keys)
+ omdbKey = process.env.OMDB_KEY 
+}
 var fs = require("fs");
 var logs=require("./log.js");
 
@@ -15,6 +27,7 @@ let prod_spot_keys={
   id:process.env['SPOT_ID'],
   key:process.env['SPOT_KEY']
 }
+
 
 //vars to capture user inputs.
 var userOption = process.argv[2];
@@ -108,7 +121,7 @@ function showSongInfo(inputParameter) {
   ;
 }
 
-let omdbKey=keys['OMDB_KEY']||process.env.OMDB_KEY
+
 function showMovieInfo(inputParameter) {
   console.log("inputParameter : ",inputParameter)
 
