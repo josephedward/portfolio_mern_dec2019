@@ -29,6 +29,10 @@ app.use(routes);
 // Add routes, both API and view
 app.use("/",routes);
 
+// app.use("/creds", function(req,res){
+//   res.send(process.env)
+// })
+
 // Connect to the Mongo DB
 //added line to avoid deprecation warning
 mongoose.connect(

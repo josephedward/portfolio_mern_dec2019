@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import Terminal from 'terminal-in-react';
 // import {logs, showConcertInfo, showMovieInfo, showSomeInfo, showSongInfo, UserInputs} from "./liriBot/liri";
 import * as liri from "./liriBot/liri.js"
-
-
+import axios from 'axios'
 // import { execSync } from 'child_process';  // replace ^ if using ES modules
 // var term = require( 'terminal-kit' ).terminal ;
 
@@ -17,7 +16,14 @@ class TerminalBrowser extends Component {
   showMsg = () => 'Hello World'
   
   render() {
-    console.log("process.env : ",process.env);
+    // axios.get("/creds")
+    // .then(function(response){
+    //   console.log(response)
+    // }).catch(
+    //   function (error){
+    //   console.log(error)
+    // })
+
     return (
       <div
         style={{
@@ -53,6 +59,7 @@ class TerminalBrowser extends Component {
             const text = args.slice(1).join(' ');
             console.log(text)
             liri.showConcertInfo(text)
+
             },
             'spotify-this-song':
             (args, print, runCommand) => {

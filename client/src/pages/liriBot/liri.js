@@ -1,38 +1,19 @@
+// environment variables
 require("dotenv").config();
+//variables
 var request = require("request");
+var keys = require("./keys.js");
+
 
 var Spotify = require("node-spotify-api");
-var spotify;
-let omdbKey;
+let spotify = new Spotify(keys.spotify)
+let omdbKey = keys['OMDB_KEY']
 
-console.log(process.env)
-if(process.env.NODE_ENV == "development")
-{
-  console.log("dev env")
-  var keys = require("./keys.js");
-  spotify = new Spotify(keys.spotify)
-  omdbKey = keys['OMDB_KEY']
-}
-
-if(process.env.NODE_ENV =="production"){
-  console.log("prod env")
-  console.log(process.env['SPOT_ID'])
-  console.log(process.env['SPOT_KEY'])
-  let prod_spot_keys={
-    id:process.env['SPOT_ID'],
-    key:process.env['SPOT_KEY']
-  }
-
- spotify = new Spotify(prod_spot_keys)
- omdbKey = process.env.OMDB_KEY 
-}
 var fs = require("fs");
 var logs=require("./log.js");
 
 // var time = moment().format('HH:mm:ss');
 var axios = require("axios");
-
-
 
 
 //vars to capture user inputs.
@@ -178,5 +159,60 @@ function showSomeInfo() {
   });
 }
 
+
+
+
+
 module.exports ={logs, showConcertInfo, showMovieInfo, showSomeInfo, showSongInfo, UserInputs}
 
+
+//****************************************************************************************************************************************/
+// module.exports={getRottenTomatoesRatingValue,getRottenTomatoesRatingObject};
+// function showConcertInfo0(inputParameter){
+
+// // Grab the axios package...
+// var axios = require("axios");
+
+// // Then run a request with axios to the OMDB API with the movie specified
+// var queryUrl = "https://rest.bandsintown.com/artists/" + inputParameter + "/events?app_id=codingbootcamp";
+
+// axios
+//   .get(queryUrl)
+//   .then(function(response) {
+
+//     var concerts = JSON.parse(response.data);
+//     for (var i = 0; i < concerts.length; i++) {
+//         console.log("**********EVENT INFO*********");
+//         //fs.appendFileSync("log.txt", "**********EVENT INFO*********\n");//Append in log.txt file
+//         console.log(i);
+//         //fs.appendFileSync("log.txt", i+"\n");
+//         console.log("Name of the Venue: " + concerts[i].venue.name);
+//         //fs.appendFileSync("log.txt", "Name of the Venue: " + concerts[i].venue.name+"\n");
+//         console.log("Venue Location: " +  concerts[i].venue.city);
+//         //fs.appendFileSync("log.txt", "Venue Location: " +  concerts[i].venue.city+"\n");
+//         console.log("Date of the Event: " +  concerts[i].datetime);
+//         //fs.appendFileSync("log.txt", "Date of the Event: " +  concerts[i].datetime+"\n");
+//         console.log("*****************************");
+//         //fs.appendFileSync("log.txt", "*****************************"+"\n");
+//     }
+
+// })
+//   .catch(function(error) {
+//     if (error.response) {
+//       // The request was made and the server responded with a status code
+//       // that falls out of the range of 2xx
+//       console.log(error.response.data);
+//       console.log(error.response.status);
+//       console.log(error.response.headers);
+//     } else if (error.request) {
+//       // The request was made but no response was received
+//       // `error.request` is an object that comes back with details pertaining to the error that occurred.
+//       console.log(error.request);
+//     } else {
+//       // Something happened in setting up the request that triggered an Error
+//       console.log("Error", error.message);
+//     }
+//     console.log(error.config);
+//   });
+
+// }
