@@ -4,10 +4,6 @@ var request = require("request");
 var Spotify = require("node-spotify-api");
 var spotify;
 let omdbKey;
-let prod_spot_keys={
-  id:process.env['SPOT_ID'],
-  key:process.env['SPOT_KEY']
-}
 
 console.log(process.env)
 if(process.env.NODE_ENV == "development")
@@ -17,8 +13,13 @@ if(process.env.NODE_ENV == "development")
   spotify = new Spotify(keys.spotify)
   omdbKey = keys['OMDB_KEY']
 }
-else{
+
+if(process.env.NODE_ENV =="production"){
   console.log("prod env")
+  let prod_spot_keys={
+    id:process.env['SPOT_ID'],
+    key:process.env['SPOT_KEY']
+  }
  spotify = new Spotify(prod_spot_keys)
  omdbKey = process.env.OMDB_KEY 
 }
