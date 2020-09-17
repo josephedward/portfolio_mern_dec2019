@@ -16,11 +16,11 @@ if(process.env.NODE_ENV == "development")
 
 if(process.env.NODE_ENV =="production"){
   console.log("prod env")
-  let prod_spot_keys={
+  exports.spotify={
     id:process.env['SPOT_ID'],
     key:process.env['SPOT_KEY']
   }
- spotify = new Spotify(prod_spot_keys)
+ spotify = new Spotify(spotify)
  omdbKey = process.env.OMDB_KEY 
 }
 var fs = require("fs");
