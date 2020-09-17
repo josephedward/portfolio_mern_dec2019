@@ -4,13 +4,17 @@ require("dotenv").config();
 var request = require("request");
 var keys = require("./keys.js");
 var Spotify = require("node-spotify-api");
-var spotify = new Spotify(keys.spotify);
+var spotify = new Spotify(keys.spotify||prod_spot_keys)
 var fs = require("fs");
 var logs=require("./log.js");
 
 // var time = moment().format('HH:mm:ss');
 var axios = require("axios");
 
+let prod_spot_keys={
+  id:process.env['SPOT_ID'],
+  key:process.env['SPOT_KEY']
+}
 
 
 //vars to capture user inputs.
@@ -69,26 +73,7 @@ function showConcertInfo(inputParameter) {
     .catch(function (error) {
       console.log("error :",error);
     });
-  // request(queryUrl, function(error, response, body) {
-  //   // If the request is successful
-  //   if (!error && response.statusCode === 200) {
-  //     try {
-  //       var concerts = JSON.parse(body);
-  //       logs.logConcerts(concerts);
-  //       for (var i = 0; i < concerts.length; i++) {
-  //         console.log("**********EVENT INFO*********");
-  //         console.log(i);
-  //         console.log("Name of the Venue: " + concerts[i].venue.name);
-  //         console.log("Venue Location: " + concerts[i].venue.city);
-  //         console.log("Date of the Event: " + concerts[i].datetime);
-  //         console.log("*****************************");
-  //       }        
-  //     } catch (error) {
-  //       console.log("Bad Request. Please try again.");
-  //     }
 
-  //   } 
-  // });
 }
 
 //Funtion for Music Info: Spotify
@@ -97,34 +82,35 @@ function showSongInfo(inputParameter) {
   if (inputParameter === undefined||inputParameter==="") {
     inputParameter = "Separate Ways";
   }
-  //node-spotify-api call 
   spotify.search(
     {
       type: "track",
       query: inputParameter
-    },
-    function(err,data) {
-      //cant get the err to log no matter WTF I DO!!!! 
-      var songs = data.tracks.items;
-      logs.logSongs(songs);
-      for (var i = 0; i < songs.length; i++) {
-        console.log("**********SONG INFO*********");
-        console.log(i);
-        console.log("Song name: " + songs[i].name);
-        console.log("Preview song: " + songs[i].preview_url);
-        console.log("Album: " + songs[i].album.name);
-        console.log("Artist(s): " + songs[i].artists[0].name);
-        console.log("*****************************");
-      }
+
+    })
+  .then(function (response) {
+    var songs = response.tracks.items;
+    for (var i = 0; i < songs.length; i++) {
+      console.log("**********SONG INFO*********");
+      console.log(i);
+      console.log("Song name: " + songs[i].name);
+      console.log("Preview song: " + songs[i].preview_url);
+      console.log("Album: " + songs[i].album.name);
+      console.log("Artist(s): " + songs[i].artists[0].name);
+      console.log("*****************************");
     }
-  );
+  
+  })
+  .catch(function (error) {
+    console.log("error :",error);
+  });
+  
+  
+  ;
 }
 
-
-//Funtion for Movie Info: OMDB
+let omdbKey=keys['OMDB_KEY']||process.env.OMDB_KEY
 function showMovieInfo(inputParameter) {
-  // var inputParameter = process.argv.slice(3).join(' ');
- 
   console.log("inputParameter : ",inputParameter)
 
     if (inputParameter === undefined||inputParameter==="") {
@@ -133,7 +119,7 @@ function showMovieInfo(inputParameter) {
     var queryUrl =
       "http://www.omdbapi.com/?t=" +
       inputParameter +
-      "&y=&plot=short&apikey=b3c0b435";
+      `&y=&plot=short&apikey=${omdbKey}`;
 
     axios
     .get(queryUrl)

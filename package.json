@@ -17,7 +17,7 @@
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build"
   },
-  "contributors": "joseph edward",
+  "contributors": ["joseph edward"],
   "license": "ISC",
   "dependencies": {
     "concurrently": "^4.1.2",

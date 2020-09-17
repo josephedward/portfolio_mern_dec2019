@@ -10,3 +10,12 @@ misc
 /misc
 /misc/*
 .env
+
+client
+keys
+keys.js
+./client/src/pages/liribot/key.js
+
+**/keys
+*.keys
+*/keys.js
