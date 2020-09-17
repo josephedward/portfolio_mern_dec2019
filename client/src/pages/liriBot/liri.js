@@ -1,13 +1,14 @@
-// environment variables
 require("dotenv").config();
-//variables
 var request = require("request");
-
-
 
 var Spotify = require("node-spotify-api");
 var spotify;
 let omdbKey;
+let prod_spot_keys={
+  id:process.env['SPOT_ID'],
+  key:process.env['SPOT_KEY']
+}
+
 if(process.env.NODE_ENV == "development")
 {
   var keys = require("./keys.js");
@@ -24,10 +25,7 @@ var logs=require("./log.js");
 // var time = moment().format('HH:mm:ss');
 var axios = require("axios");
 
-let prod_spot_keys={
-  id:process.env['SPOT_ID'],
-  key:process.env['SPOT_KEY']
-}
+
 
 
 //vars to capture user inputs.
