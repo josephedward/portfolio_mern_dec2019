@@ -16,7 +16,6 @@ let prod_spot_keys={
   key:process.env['SPOT_KEY']
 }
 
-
 //vars to capture user inputs.
 var userOption = process.argv[2];
 var inputParameter = process.argv.slice(3).join(' ');
