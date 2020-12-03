@@ -9,7 +9,7 @@ var Spotify = require("node-spotify-api");
 let spotify = new Spotify(keys.spotify)
 let omdbKey = keys['OMDB_KEY']
 
-var fs = require("fs");
+// var fs = require("fs");
 var logs=require("./log.js");
 
 // var time = moment().format('HH:mm:ss');
@@ -148,15 +148,15 @@ function showMovieInfo(inputParameter) {
 
 //function for reading out of random.txt file
 function showSomeInfo() {
-  fs.readFile("random.txt", "utf8", function(err, data) {
-    if (err) {
-      return console.log(err);
-    }else
-  {
-    var dataArr = data.split(",");
-    UserInputs(dataArr[0], dataArr[1]);
-  }
-  });
+  // fs.readFile("random.txt", "utf8", function(err, data) {
+  //   if (err) {
+  //     return console.log(err);
+  //   }else
+  // {
+    // var dataArr = data.split(",");
+    // UserInputs(dataArr[0], dataArr[1]);
+  // }
+  // });
 }
 
 

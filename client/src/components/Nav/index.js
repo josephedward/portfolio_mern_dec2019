@@ -1,27 +1,23 @@
 import React, { Component } from "react";
-import { Menu } from "semantic-ui-react";
+import { Menu, Checkbox } from "semantic-ui-react";
+import Toggle from "react-toggle";
 
-require("typeface-aleo")
-require("typeface-open-sans")
+require("typeface-aleo");
+require("typeface-open-sans");
 
 class Nav extends Component {
   render() {
-
     return (
-      <Menu 
-      // className="navbar navbar-expand-lg navbar-dark bg-danger" 
-      style={{...navStyle}}
-      stackable
+      <Menu
+        style={{ ...navStyle }}
+        stackable
       >
-        <Menu.Item 
-        // className="navbar-brand" 
-        href="/" 
-        style={{...txtStyle2}}
+        <Menu.Item
+          href="/"
+          style={{ ...txtStyle2 }}
         >
           Joseph Edward, Web Developer
         </Menu.Item>
-
-        {/* <hr /> */}
         <Menu.Item style={{ ...txtStyle2 }} href="/">
           Home{" "}
         </Menu.Item>
@@ -34,6 +30,16 @@ class Nav extends Component {
         <Menu.Item style={{ ...txtStyle2 }} href="/persistent.html">
           Persistent{" "}
         </Menu.Item>
+        <Menu.Item
+          style={{...txtStyle2}}
+        >
+          Invert
+          <Toggle
+            onClick={() => {
+              document.documentElement.classList.toggle("dark-mode");
+            }}
+          />
+        </Menu.Item>
       </Menu>
     );
   }
@@ -42,32 +48,22 @@ class Nav extends Component {
 export default Nav;
 
 const navStyle = {
-    marginBottom:"0px",
-    color: "black",
-    border:"5px solid purple",
-    outline:"5px solid blue",
-    // backgroundColor:"black",
-    background: "rgba(0,0,0,0)",
-    width:"100%",
-    display:"flex",
-    justifyContent:"center"
+  marginBottom: "0px",
+  color: "black",
+  border: "10px solid lightgreen",
+  background: "rgba(0,0,0,0)",
+  width: "100%",
+  display: "flex",
+  justifyContent: "center",
 };
-
 
 const txtStyle2 = {
   fontFamily: "Helvetica",
   "-webkit-text-stroke-width": "1px",
-  "-webkit-text-stroke-color": "black",
-  backgroundColor:"aqua",
-  fontSize: "25px",
-  fontWeight:"bold",
-  color:"orange",
-  // "margin-left":"25px",
-  paddingLeft:"5%",
-  paddingRight:"5%"
-
-  // width:"100%"
-  // color: "white",
-  // border:"1px solid silver"
-  
+  "-webkit-text-stroke-color": "white",
+  backgroundColor: "silver",
+  fontSize: "20px",
+  fontWeight: "bold",
+  color: "darkblue",
+  border:"5px solid orange"
 };

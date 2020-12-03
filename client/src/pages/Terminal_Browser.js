@@ -1,13 +1,7 @@
 import React, { Component } from 'react';
 import Terminal from 'terminal-in-react';
-// import {logs, showConcertInfo, showMovieInfo, showSomeInfo, showSongInfo, UserInputs} from "./liriBot/liri";
 import * as liri from "./liriBot/liri.js"
 import axios from 'axios'
-// import { execSync } from 'child_process';  // replace ^ if using ES modules
-// var term = require( 'terminal-kit' ).terminal ;
-
-// import {term} from 'terminal-kit'
-// .terminal;
 
 
 class TerminalBrowser extends Component {
@@ -16,13 +10,6 @@ class TerminalBrowser extends Component {
   showMsg = () => 'Hello World'
   
   render() {
-    // axios.get("/creds")
-    // .then(function(response){
-    //   console.log(response)
-    // }).catch(
-    //   function (error){
-    //   console.log(error)
-    // })
 
     return (
       <div
@@ -30,8 +17,6 @@ class TerminalBrowser extends Component {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          // height: "100vh",
-          // width:"800px"
         }}
       >
 
@@ -66,7 +51,7 @@ class TerminalBrowser extends Component {
             const text = args.slice(1).join(' ');
             console.log(text)
             liri.showSongInfo(text)
-            },
+            }
           }}
           descriptions={{
             'open-google': 'opens google.com',

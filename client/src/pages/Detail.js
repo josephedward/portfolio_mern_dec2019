@@ -18,14 +18,14 @@ class Detail extends Component {
 
   render() {
     return (
-      <Container fluid>
+      <Container fluid
+       style={{height:"1000px"}}
+      >
         <Row>
           <Col size="md-12">
             <Jumbotron>
               <h1>
-
                 {this.state.project.name} 
-                {/* by {this.state.project.contributors} */}
               </h1>
             </Jumbotron>
           </Col>
