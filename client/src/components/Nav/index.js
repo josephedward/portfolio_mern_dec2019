@@ -50,8 +50,9 @@ export default Nav;
 const navStyle = {
   marginBottom: "0px",
   color: "black",
-  border: "10px solid lightgreen",
-  background: "rgba(0,0,0,0)",
+  border: "10px solid aqua",
+  // background: "rgba(0,0,0,0)",
+  backgroundColor:"red",
   width: "100%",
   display: "flex",
   justifyContent: "center",
@@ -61,9 +62,9 @@ const txtStyle2 = {
   fontFamily: "Helvetica",
   "-webkit-text-stroke-width": "1px",
   "-webkit-text-stroke-color": "white",
-  backgroundColor: "silver",
+  backgroundColor: "orange",
   fontSize: "20px",
   fontWeight: "bold",
   color: "darkblue",
-  border:"5px solid orange"
+  border:"5px solid darkblue"
 };
