@@ -29,10 +29,9 @@ class TerminalBrowser extends Component {
         }}
       >
 
-{/* { term( 'Hello world!\n' ) }  */}
+
         <Terminal
          watchConsoleLogging 
-        //  commandPassThrough={cmd => `-PassedThrough:${cmd}: stinky command not found`}
           color='lightgreen'
           backgroundColor={this.state.backgroundColor}
           barColor='white'
@@ -78,7 +77,7 @@ class TerminalBrowser extends Component {
             popup: 'alert',
             "movie-this": "Search the IMDB database for movie results, e.g. 'movie-this Batman'.",
             "concert-this": "Search the Events in Town database for concert information, e.g. 'concert-this The Weekend'.",
-            "spotify-this-song":"Searches Spotify API for given song, e.g. 'spotify-this-song Sail Away'",
+            "spotify-this-song":"Searches Spotify API for given song, e.g. 'spotify-this-song Sail Away'.",
             "change-background-color:":"Change the background color, if color is valid CSS string for the browser you are using."
           }}
           msg="Type 'help' to get a list of filler commands. Check back soon"
