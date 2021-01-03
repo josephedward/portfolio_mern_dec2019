@@ -1,29 +1,17 @@
-// environment variables
 require("dotenv").config();
-//variables
 var request = require("request");
 var keys = require("./keys.js");
-
-
 var Spotify = require("node-spotify-api");
 let spotify = new Spotify(keys.spotify)
 let omdbKey = keys['OMDB_KEY']
-
-// var fs = require("fs");
 var logs=require("./log.js");
-
-// var time = moment().format('HH:mm:ss');
 var axios = require("axios");
-
-
-//vars to capture user inputs.
 var userOption = process.argv[2];
 var inputParameter = process.argv.slice(3).join(' ');
 
-//Execute function
+
 UserInputs(userOption, inputParameter);
 
-//Switch Statement
 function UserInputs(userOption, inputParameter) {
   switch (userOption) {
     case "concert-this":
@@ -45,12 +33,11 @@ function UserInputs(userOption, inputParameter) {
   }
 }
 
-//Funtion for Concert Info: Bands in Town
+
 function showConcertInfo(inputParameter) {
     if (inputParameter === undefined||inputParameter==="") {
         inputParameter = "The Weekend";
       }   
-      // console.log(inputParameter)
   var queryUrl =
     "https://rest.bandsintown.com/artists/" +
     inputParameter +
@@ -75,7 +62,6 @@ function showConcertInfo(inputParameter) {
 
 }
 
-//Funtion for Music Info: Spotify
 function showSongInfo(inputParameter) {
   
   if (inputParameter === undefined||inputParameter==="") {
@@ -123,11 +109,7 @@ function showMovieInfo(inputParameter) {
     axios
     .get(queryUrl)
     .then(function (response) {
-      // console.log(response)
       var movie = response.data;
-      // console.log(movie)
-      // console.log(movie.data)
-      // console.log(movie.Actors)
       console.log("**********MOVIE INFO*********");
       console.log("Title: " + movie.Title);
       console.log("Release Year: " + movie.Year);
@@ -145,18 +127,8 @@ function showMovieInfo(inputParameter) {
 }
 
 
-
-//function for reading out of random.txt file
 function showSomeInfo() {
-  // fs.readFile("random.txt", "utf8", function(err, data) {
-  //   if (err) {
-  //     return console.log(err);
-  //   }else
-  // {
-    // var dataArr = data.split(",");
-    // UserInputs(dataArr[0], dataArr[1]);
-  // }
-  // });
+
 }
 
 
@@ -165,54 +137,3 @@ function showSomeInfo() {
 
 module.exports ={logs, showConcertInfo, showMovieInfo, showSomeInfo, showSongInfo, UserInputs}
 
-
-//****************************************************************************************************************************************/
-// module.exports={getRottenTomatoesRatingValue,getRottenTomatoesRatingObject};
-// function showConcertInfo0(inputParameter){
-
-// // Grab the axios package...
-// var axios = require("axios");
-
-// // Then run a request with axios to the OMDB API with the movie specified
-// var queryUrl = "https://rest.bandsintown.com/artists/" + inputParameter + "/events?app_id=codingbootcamp";
-
-// axios
-//   .get(queryUrl)
-//   .then(function(response) {
-
-//     var concerts = JSON.parse(response.data);
-//     for (var i = 0; i < concerts.length; i++) {
-//         console.log("**********EVENT INFO*********");
-//         //fs.appendFileSync("log.txt", "**********EVENT INFO*********\n");//Append in log.txt file
-//         console.log(i);
-//         //fs.appendFileSync("log.txt", i+"\n");
-//         console.log("Name of the Venue: " + concerts[i].venue.name);
-//         //fs.appendFileSync("log.txt", "Name of the Venue: " + concerts[i].venue.name+"\n");
-//         console.log("Venue Location: " +  concerts[i].venue.city);
-//         //fs.appendFileSync("log.txt", "Venue Location: " +  concerts[i].venue.city+"\n");
-//         console.log("Date of the Event: " +  concerts[i].datetime);
-//         //fs.appendFileSync("log.txt", "Date of the Event: " +  concerts[i].datetime+"\n");
-//         console.log("*****************************");
-//         //fs.appendFileSync("log.txt", "*****************************"+"\n");
-//     }
-
-// })
-//   .catch(function(error) {
-//     if (error.response) {
-//       // The request was made and the server responded with a status code
-//       // that falls out of the range of 2xx
-//       console.log(error.response.data);
-//       console.log(error.response.status);
-//       console.log(error.response.headers);
-//     } else if (error.request) {
-//       // The request was made but no response was received
-//       // `error.request` is an object that comes back with details pertaining to the error that occurred.
-//       console.log(error.request);
-//     } else {
-//       // Something happened in setting up the request that triggered an Error
-//       console.log("Error", error.message);
-//     }
-//     console.log(error.config);
-//   });
-
-// }

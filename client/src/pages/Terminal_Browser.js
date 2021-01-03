@@ -6,11 +6,20 @@ import axios from 'axios'
 
 class TerminalBrowser extends Component {
 
+  constructor(props){
+    super(props)
+    this.state={backgroundColor:"black"}
+  }
 
   showMsg = () => 'Hello World'
   
-  render() {
+   isColor(strColor){
+    var s = new Option().style;
+    s.color = strColor;
+    return s.color == strColor;
+  }
 
+  render(props) {
     return (
       <div
         style={{
@@ -25,7 +34,7 @@ class TerminalBrowser extends Component {
          watchConsoleLogging 
         //  commandPassThrough={cmd => `-PassedThrough:${cmd}: stinky command not found`}
           color='lightgreen'
-          backgroundColor='black'
+          backgroundColor={this.state.backgroundColor}
           barColor='white'
           style={{ fontWeight: "bold", fontSize: "1em" }}
           commands={{
@@ -33,7 +42,6 @@ class TerminalBrowser extends Component {
             showmsg: this.showMsg,
             popup: () => alert('Terminal in React'),
             'movie-this': 
-            // (args) =>  
             (args, print, runCommand) => {
             const text = args.slice(1).join(' ');
             console.log(text)
@@ -44,13 +52,23 @@ class TerminalBrowser extends Component {
             const text = args.slice(1).join(' ');
             console.log(text)
             liri.showConcertInfo(text)
-
             },
             'spotify-this-song':
             (args, print, runCommand) => {
             const text = args.slice(1).join(' ');
             console.log(text)
             liri.showSongInfo(text)
+            },
+            'change-background-color':
+            (args, print, runCommand) => {
+            const text = args.slice(1).join(' ');
+            if(this.isColor(text))
+            {
+              this.setState({backgroundColor:text})
+            }
+            else{
+              print("That is not a valid color")
+            }
             }
           }}
           descriptions={{
@@ -60,7 +78,8 @@ class TerminalBrowser extends Component {
             popup: 'alert',
             "movie-this": "Search the IMDB database for movie results, e.g. 'movie-this Batman'.",
             "concert-this": "Search the Events in Town database for concert information, e.g. 'concert-this The Weekend'.",
-            "spotify-this-song":"Searches Spotify API for given song, e.g. 'spotify-this-song internet going nutz'"
+            "spotify-this-song":"Searches Spotify API for given song, e.g. 'spotify-this-song Sail Away'",
+            "change-background-color:":"Change the background color, if color is valid CSS string for the browser you are using."
           }}
           msg="Type 'help' to get a list of filler commands. Check back soon"
         />
