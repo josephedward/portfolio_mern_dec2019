@@ -12,7 +12,9 @@ function App() {
   return (
     <Router>
       <div>
-        <Nav />
+        <Nav
+        style={{width:"100%"}}
+         />
         <Switch>
           <Route exact path="/terminal" component={Terminal_Browser} />
           <Route exact path="/projects" component={Projects} />
