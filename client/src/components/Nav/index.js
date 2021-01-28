@@ -11,6 +11,14 @@ class Nav extends Component {
     return (
       
       <Menu style={{ ...navStyle }} stackable>
+              <Menu.Item style={{ ...txtStyle2 }}>
+          Invert
+          <Toggle
+            onClick={() => {
+              document.documentElement.classList.toggle("dark-mode");
+            }}
+          />
+        </Menu.Item>
         <Menu.Item href="/" style={{ ...txtStyle2 }}>
           Joseph Edward, Web Developer
         </Menu.Item>
@@ -26,8 +34,9 @@ class Nav extends Component {
         <Menu.Item
           className="cybr-btn"
           style={{
-            backgroundColor: "black",
-            color:"white"
+            // backgroundColor: "black",
+            // color:"white",
+            ...txtStyle2
           //   background:
           //     "linear-gradient(90deg, #f5ed00 80%, #e6de00 80%), #fff700",
           }}
@@ -41,14 +50,7 @@ class Nav extends Component {
             R25
           </span> */}
         </Menu.Item>
-        <Menu.Item style={{ ...txtStyle2 }}>
-          Invert
-          <Toggle
-            onClick={() => {
-              document.documentElement.classList.toggle("dark-mode");
-            }}
-          />
-        </Menu.Item>
+
       </Menu>
   
     );
@@ -71,6 +73,7 @@ const navStyle = {
 
 const txtStyle2 = {
   fontFamily: "Helvetica",
+
   "-webkit-text-stroke-width": "1px",
   "-webkit-text-stroke-color": "white",
   backgroundColor: "red",
