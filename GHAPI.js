@@ -1,4 +1,3 @@
-//this is why you had issues when authenticating before? 
 require('dotenv').config()
 const GitHubClient = require('./js_github_quickstart/libs/GitHubClient.js').GitHubClient;
 const users = require('./js_github_quickstart/libs/features/users');

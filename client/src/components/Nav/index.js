@@ -22,9 +22,9 @@ class Nav extends Component {
         <Menu.Item href="/" style={{ ...txtStyle2 }}>
           Joseph Edward, Web Developer
         </Menu.Item>
-        <Menu.Item style={{ ...txtStyle2 }} href="/">
+        {/* <Menu.Item style={{ ...txtStyle2 }} href="/">
           Home{" "}
-        </Menu.Item>
+        </Menu.Item> */}
         <Menu.Item style={{ ...txtStyle2 }} href="/projects">
           Projects{" "}
         </Menu.Item>
