@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Menu, Checkbox } from "semantic-ui-react";
+import { Menu } from "semantic-ui-react";
 import Toggle from "react-toggle";
 import "./index.css";
 
@@ -9,9 +9,8 @@ require("typeface-open-sans");
 class Nav extends Component {
   render() {
     return (
-      
       <Menu style={{ ...navStyle }} stackable>
-              <Menu.Item style={{ ...txtStyle2 }}>
+        <Menu.Item style={{ ...txtStyle2 }}>
           Invert
           <Toggle
             onClick={() => {
@@ -20,25 +19,22 @@ class Nav extends Component {
           />
         </Menu.Item>
         <Menu.Item href="/" style={{ ...txtStyle2 }}>
-          Joseph Edward, Web Developer
+          Joseph Edward, Web Developer{" "}
         </Menu.Item>
-        {/* <Menu.Item style={{ ...txtStyle2 }} href="/">
-          Home{" "}
-        </Menu.Item> */}
+
         <Menu.Item style={{ ...txtStyle2 }} href="/projects">
           Projects{" "}
         </Menu.Item>
         <Menu.Item style={{ ...txtStyle2 }} href="/terminal">
           Terminal{" "}
         </Menu.Item>
+        <Menu.Item style={{ ...txtStyle2 }} href="/contact">
+          Contact{" "}
+        </Menu.Item>
         <Menu.Item
           className="cybr-btn"
           style={{
-            // backgroundColor: "black",
-            // color:"white",
-            ...txtStyle2
-          //   background:
-          //     "linear-gradient(90deg, #f5ed00 80%, #e6de00 80%), #fff700",
+            ...txtStyle2,
           }}
           href="/persistent.html"
         >
@@ -46,13 +42,8 @@ class Nav extends Component {
           <span aria-hidden class="cybr-btn__glitch">
             Glitch_
           </span>
-          {/* <span aria-hidden class="cybr-btn__tag">
-            R25
-          </span> */}
         </Menu.Item>
-
       </Menu>
-  
     );
   }
 }

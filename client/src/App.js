@@ -7,6 +7,7 @@ import Nav from "./components/Nav";
 import Terminal_Browser from "./pages/Terminal_Browser";
 // import jQ_Portfolio from "./pages/jQ_Portfolio";
 import Home from "./pages/Home";
+import Contact from "./pages/Contact"
 
 function App() {
   return (
@@ -19,7 +20,8 @@ function App() {
           <Route exact path="/terminal" component={Terminal_Browser} />
           <Route exact path="/projects" component={Projects} />
           <Route exact path="/projects/:id" component={Detail} />
-          <Route exact path="/" component={Home} />
+          <Route exact path="/contact" component={Contact} />
+          <Route exact path="/" component={Home}/>
           <Route component={NoMatch} />
         </Switch>
       </div>
