@@ -22,9 +22,6 @@ function UserInputs(userOption, inputParameter) {
     case "movie-this":
       showMovieInfo(inputParameter);
       break;
-    case "do-what-it-says":
-      showSomeInfo();
-      break;
     default:
       console.log(
         "Invalid Option. Please type any of the following options: \nconcert-this \nspotify-this-song \nmovie-this \ndo-what-it-says"
@@ -101,7 +98,7 @@ function showMovieInfo(inputParameter) {
       inputParameter = "The Matrix";
     }
     var queryUrl =
-      "http://www.omdbapi.com/?t=" +
+      "https://www.omdbapi.com/?t=" +
       inputParameter +
       `&y=&plot=short&apikey=${omdbKey}`;
 
@@ -126,13 +123,7 @@ function showMovieInfo(inputParameter) {
 }
 
 
-function showSomeInfo() {
-
-}
 
 
-
-
-
-module.exports ={logs, showConcertInfo, showMovieInfo, showSomeInfo, showSongInfo, UserInputs}
+module.exports ={logs, showConcertInfo, showMovieInfo, showSongInfo, UserInputs}
 
