@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Terminal from 'terminal-in-react';
 import * as liri from "./liriBot/liri.js"
-import axios from 'axios'
 
 
 class TerminalBrowser extends Component {
@@ -16,7 +15,7 @@ class TerminalBrowser extends Component {
    isColor(strColor){
     var s = new Option().style;
     s.color = strColor;
-    return s.color == strColor;
+    return s.color === strColor;
   }
 
   render(props) {
@@ -26,12 +25,14 @@ class TerminalBrowser extends Component {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
+          height: "100vh"
         }}
       >
 
 
         <Terminal
-         watchConsoleLogging 
+         watchConsoleLogging
+         startState = 'maximised' 
           color='lightgreen'
           backgroundColor={this.state.backgroundColor}
           barColor='white'
