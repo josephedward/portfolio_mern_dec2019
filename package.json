@@ -22,7 +22,7 @@
   ],
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": ">=0.21.1",
     "concurrently": "^4.1.2",
     "dotenv": "^8.2.0",
     "express": "^4.16.3",
@@ -31,9 +31,11 @@
     "inquirer": "^7.3.3",
     "javascript-terminal": "^1.0.3",
     "mongoose": "^5.3.16",
+    "mquery": ">=3.2.3",
     "node-fetch": "^1.6.3",
     "nodemon": "^1.18.7",
     "react-console-emulator": "^3.0.4",
+    "react-dom": ">=16.2.1",
     "react-iframe": "^1.8.0",
     "react-keydown": "^1.9.12",
     "react-terminal-component": "^1.4.1",
@@ -45,6 +47,8 @@
     "terminal-in-react": "^4.3.1",
     "terminatorator": "0.0.6",
     "typeface-aleo": "0.0.69",
-    "typeface-open-sans": "0.0.75"
+    "typeface-open-sans": "0.0.75",
+    "y18n": ">=4.0.1",
+    
   }
 }
