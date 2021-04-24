@@ -16,19 +16,7 @@ class Nav extends Component {
   render() {
     return (
       <Menu style={{ ...navStyle }} stackable>
-        <Menu.Item style={{ ...txtStyle2 }}>
-          Invert
-          {/* <Toggle
-            onClick={() => {
-              document.documentElement.classList.toggle("dark-mode");
-            }}
-          /> */}
-          <Toggle
-            onClick={() => {
-              document.documentElement.classList.toggle("dark-mode");
-            }}
-          />
-        </Menu.Item>
+      
         <Menu.Item href="/" style={{ ...txtStyle2 }}>
           Joseph Edward, Web Developer{" "}
         </Menu.Item>
@@ -53,6 +41,14 @@ class Nav extends Component {
           <span aria-hidden class="cybr-btn__glitch">
             Glitch_
           </span>
+        </Menu.Item>
+        <Menu.Item style={{ ...txtStyle2 }}>
+          Invert
+          <Toggle
+            onClick={() => {
+              document.documentElement.classList.toggle("dark-mode");
+            }}
+          />
         </Menu.Item>
       </Menu>
     );
