@@ -6,12 +6,23 @@ import "./index.css";
 require("typeface-aleo");
 require("typeface-open-sans");
 
+function getRandomColor(){
+  var randomColor = Math.floor(Math.random() * 16777215).toString(16);
+return randomColor
+}
+
+
 class Nav extends Component {
   render() {
     return (
       <Menu style={{ ...navStyle }} stackable>
         <Menu.Item style={{ ...txtStyle2 }}>
           Invert
+          {/* <Toggle
+            onClick={() => {
+              document.documentElement.classList.toggle("dark-mode");
+            }}
+          /> */}
           <Toggle
             onClick={() => {
               document.documentElement.classList.toggle("dark-mode");
@@ -55,7 +66,7 @@ const navStyle = {
   // color: "aqua",
   border: "10px solid aqua",
   // background: "rgba(0,0,0,0)",
-  backgroundColor: "black",
+  backgroundColor: `#${getRandomColor()}`,
   width: "100%",
   display: "flex",
   justifyContent: "center",
@@ -67,7 +78,7 @@ const txtStyle2 = {
 
   "-webkit-text-stroke-width": "1px",
   "-webkit-text-stroke-color": "white",
-  backgroundColor: "red",
+  backgroundColor: `#${getRandomColor()}`,
   fontSize: "20px",
   fontWeight: "bold",
   color: "darkblue",
