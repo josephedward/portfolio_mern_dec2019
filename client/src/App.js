@@ -5,9 +5,9 @@ import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
 import Terminal_Browser from "./pages/Terminal_Browser";
-// import jQ_Portfolio from "./pages/jQ_Portfolio";
 import Home from "./pages/Home";
 import Contact from "./pages/Contact"
+import Resume from "./pages/Resume"
 
 function App() {
   return (
@@ -21,6 +21,7 @@ function App() {
           <Route exact path="/projects" component={Projects} />
           <Route exact path="/projects/:id" component={Detail} />
           <Route exact path="/contact" component={Contact} />
+          <Route exact path="/resume" component={Resume} />
           <Route exact path="/" component={Home}/>
           <Route component={NoMatch} />
         </Switch>
@@ -30,5 +31,3 @@ function App() {
 }
 
 export default App;
-
-

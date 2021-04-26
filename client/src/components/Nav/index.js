@@ -6,11 +6,27 @@ import "./index.css";
 require("typeface-aleo");
 require("typeface-open-sans");
 
+// const [, updateState] = React.useState();
+// const forceUpdate = React.useCallback(() => updateState({}), []);
+
+function getRandomColor(){
+  var randomColor = Math.floor(Math.random() * 16777215).toString(16);
+return randomColor
+}
+
+
 class Nav extends Component {
+
+
+  handleClick = () => {
+    // force a re-render
+    this.forceUpdate();
+  };
+
   render() {
     return (
       <Menu style={{ ...navStyle }} stackable>
-      
+
         <Menu.Item href="/" style={{ ...txtStyle2 }}>
           Joseph Edward, Web Developer{" "}
         </Menu.Item>
@@ -29,7 +45,7 @@ class Nav extends Component {
           style={{
             ...txtStyle2,
           }}
-          href="/persistent.html"
+          href="/resume"
         >
           Persistent{" "}
           <span aria-hidden class="cybr-btn__glitch">
@@ -44,6 +60,17 @@ class Nav extends Component {
             }}
           />
         </Menu.Item>
+        {/* <Menu.Item style={{ ...txtStyle2 }}>
+          <button
+            onClick={
+              () => {
+               document.location.reload()
+            }
+            }
+          >
+        Change Colors
+          </button>
+        </Menu.Item> */}
       </Menu>
     );
   }
@@ -54,23 +81,26 @@ export default Nav;
 const navStyle = {
   marginBottom: "0px",
   // color: "aqua",
-  border: "10px solid aqua",
+  border: `10px solid black`,
   // background: "rgba(0,0,0,0)",
-  backgroundColor: "black",
+  backgroundColor: `#${getRandomColor()}`,
   width: "100%",
   display: "flex",
   justifyContent: "center",
-  // outline:"15px solid orange"
+
 };
 
 const txtStyle2 = {
   fontFamily: "Helvetica",
 
   "-webkit-text-stroke-width": "1px",
-  "-webkit-text-stroke-color": "white",
-  backgroundColor: "red",
+  "-webkit-text-stroke-color":
+  // "black",
+  `#${getRandomColor()}`,
+  backgroundColor: `#${getRandomColor()}`,
   fontSize: "20px",
   fontWeight: "bold",
-  color: "darkblue",
-  border: "5px solid darkblue",
+  color: "black",
+  // `#${getRandomColor()}`,
+  border: `3px solid #${getRandomColor()}`,
 };

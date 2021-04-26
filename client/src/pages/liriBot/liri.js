@@ -3,13 +3,13 @@ var keys = require("./keys.js");
 var Spotify = require("node-spotify-api");
 let spotify = new Spotify(keys.spotify)
 let omdbKey = keys['OMDB_KEY']
-var logs=require("./log.js");
+// var logs=require("./log.js");
 var axios = require("axios");
-var userOption = process.argv[2];
-var inputParameter = process.argv.slice(3).join(' ');
+// var userOption = process.argv[2];
+// var inputParameter = process.argv.slice(3).join(' ');
 
 
-UserInputs(userOption, inputParameter);
+// UserInputs(userOption, inputParameter);
 
 function UserInputs(userOption, inputParameter) {
   switch (userOption) {
@@ -24,7 +24,7 @@ function UserInputs(userOption, inputParameter) {
       break;
     default:
       console.log(
-        "Invalid Option. Please type any of the following options: \nconcert-this \nspotify-this-song \nmovie-this \ndo-what-it-says"
+        "Invalid Option. Please type any of the following options: \nconcert-this \nspotify-this-song \nmovie-this "
       );
   }
 }
@@ -33,7 +33,7 @@ function UserInputs(userOption, inputParameter) {
 function showConcertInfo(inputParameter) {
     if (inputParameter === undefined||inputParameter==="") {
         inputParameter = "The Weekend";
-      }   
+      }
   var queryUrl =
     "https://rest.bandsintown.com/artists/" +
     inputParameter +
@@ -59,7 +59,7 @@ function showConcertInfo(inputParameter) {
 }
 
 function showSongInfo(inputParameter) {
-  
+
   if (inputParameter === undefined||inputParameter==="") {
     inputParameter = "Separate Ways";
   }
@@ -80,13 +80,13 @@ function showSongInfo(inputParameter) {
       console.log("Artist(s): " + songs[i].artists[0].name);
       console.log("*****************************");
     }
-  
+
   })
   .catch(function (error) {
     console.log("error :",error);
   });
-  
-  
+
+
   ;
 }
 
@@ -125,5 +125,6 @@ function showMovieInfo(inputParameter) {
 
 
 
-module.exports ={logs, showConcertInfo, showMovieInfo, showSongInfo, UserInputs}
-
+module.exports ={
+  // logs,
+   showConcertInfo, showMovieInfo, showSongInfo, UserInputs}

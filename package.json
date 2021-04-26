@@ -32,7 +32,7 @@
     "javascript-terminal": "^1.0.3",
     "mongoose": "^5.3.16",
     "mquery": ">=3.2.3",
-    "node-fetch": "^1.6.3",
+    "node-fetch": "^2.6.1",
     "nodemon": "^1.18.7",
     "react-console-emulator": "^3.0.4",
     "react-dom": ">=16.2.1",
@@ -48,7 +48,6 @@
     "terminatorator": "0.0.6",
     "typeface-aleo": "0.0.69",
     "typeface-open-sans": "0.0.75",
-    "y18n": ">=4.0.1",
-
+    "y18n": ">=4.0.1"
   }
 }
