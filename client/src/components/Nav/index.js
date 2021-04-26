@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import { Menu, Button } from "semantic-ui-react";
+import { Menu,
+  //  Button 
+  } from "semantic-ui-react";
 import Toggle from "react-toggle";
 import "./index.css";
 
@@ -45,9 +47,9 @@ class Nav extends Component {
           style={{
             ...txtStyle2,
           }}
-          href="/persistent.html"
+          href="/resume"
         >
-          Persistent{" "}
+          Resume{" "}
           <span aria-hidden class="cybr-btn__glitch">
             Glitch_
           </span>
