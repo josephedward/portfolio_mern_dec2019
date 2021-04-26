@@ -5,7 +5,6 @@ import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
 import Terminal_Browser from "./pages/Terminal_Browser";
-// import jQ_Portfolio from "./pages/jQ_Portfolio";
 import Home from "./pages/Home";
 import Contact from "./pages/Contact"
 
