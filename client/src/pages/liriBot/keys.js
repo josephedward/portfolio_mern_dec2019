@@ -1,10 +1,11 @@
+
 console.log('keys.js loaded');
 
 exports.spotify = {
-  id:process.env.SPOT_ID, 
+  id:"8654c053459b48f5af5f8af5c1874bf5",
   // process.env.SPOTIFY_ID,
-  secret: process.env.SPOT_KEY 
+  secret:"9dcaacc693e5468eb8edb13e1bd3308f"
   // process.env.SPOTIFY_SECRET
 };
 
-exports.OMDB_KEY= process.env.OMDB_KEY
+exports.OMDB_KEY= "b3c0b435"
