@@ -49,7 +49,7 @@ class Nav extends Component {
           }}
           href="/resume"
         >
-          Resume{" "}
+          Persistent{" "}
           <span aria-hidden class="cybr-btn__glitch">
             Glitch_
           </span>
