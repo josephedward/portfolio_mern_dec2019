@@ -18,11 +18,6 @@ return randomColor
 class Nav extends Component {
 
 
-  handleClick = () => {
-    // force a re-render
-    this.forceUpdate();
-  };
-
   render() {
     return (
       <Menu style={{ ...navStyle }} stackable>
@@ -80,9 +75,7 @@ export default Nav;
 
 const navStyle = {
   marginBottom: "0px",
-  // color: "aqua",
   border: `10px solid black`,
-  // background: "rgba(0,0,0,0)",
   backgroundColor: `#${getRandomColor()}`,
   width: "100%",
   display: "flex",
@@ -91,16 +84,15 @@ const navStyle = {
 };
 
 const txtStyle2 = {
+  marginBottom: "0px",
+  height:"50px",
   fontFamily: "Helvetica",
-
   "-webkit-text-stroke-width": "1px",
   "-webkit-text-stroke-color":
-  // "black",
   `#${getRandomColor()}`,
   backgroundColor: `#${getRandomColor()}`,
   fontSize: "20px",
   fontWeight: "bold",
   color: "black",
-  // `#${getRandomColor()}`,
   border: `3px solid #${getRandomColor()}`,
 };

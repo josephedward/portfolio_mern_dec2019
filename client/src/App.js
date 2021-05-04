@@ -14,7 +14,9 @@ function App() {
     <Router>
       <div>
         <Nav
-        style={{width:"100%"}}
+        style={{
+          height:"5px !important",
+          width:"100%"}}
          />
         <Switch>
           <Route exact path="/terminal" component={Terminal_Browser} />
