@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Terminal from 'terminal-in-react';
-import * as liri from "./liriBot/liri.js"
+import * as liri from "../components/liriBot/liri.js"
+// import * as hangman from "../components/hangman/index.js"
 
 
 class TerminalBrowser extends Component {
@@ -10,7 +11,8 @@ class TerminalBrowser extends Component {
     this.state={backgroundColor:"black"}
   }
 
-  // showMsg = () => 'Hello World'
+
+  showMsg = () => 'Hello World'
   
    isColor(strColor){
     var s = new Option().style;
@@ -71,13 +73,16 @@ class TerminalBrowser extends Component {
             console.log(text)
             liri.showSongInfo(text)
             },
+            // 'hangman':
+            // (args, print, runCommand) => {
+            //   const text = args.slice(1).join(' ');
+            //   console.log(text)
+            //   hangman.play()
+            //   },
           }}
           descriptions={{
             'open-google': 'opens google.com',
             "change-background-color":'Change the background color, if valid color string for your browser.',
-            // showmsg: 'shows a message',
-            // alert: 'alert', 
-            // popup: 'alert',
             "movie-this": "Search the IMDB database for movie results, e.g. 'movie-this Batman'.",
             "concert-this": "Search the Events in Town database for concert information, e.g. 'concert-this The Weekend'.",
             "spotify-this-song":"Searches Spotify API for given song, e.g. 'spotify-this-song Sail Away'.",

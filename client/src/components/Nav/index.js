@@ -43,7 +43,7 @@ class Nav extends Component {
           href="/resume"
         >
           Persistent{" "}
-          <span aria-hidden class="cybr-btn__glitch">
+          <span aria-hidden className="cybr-btn__glitch">
             Glitch_
           </span>
         </Menu.Item>
@@ -87,8 +87,8 @@ const txtStyle2 = {
   marginBottom: "0px",
   height:"50px",
   fontFamily: "Helvetica",
-  "-webkit-text-stroke-width": "1px",
-  "-webkit-text-stroke-color":
+  WebkitTextStrokeWidth: "1px",
+  WebkitTextStrokeColor:
   `#${getRandomColor()}`,
   backgroundColor: `#${getRandomColor()}`,
   fontSize: "20px",
