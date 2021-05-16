@@ -10,7 +10,7 @@ class Resume extends Component {
           width="100%"
           height="1000px"
           title="Simple Resume"
-          src="https://joseph-edward.herokuapp.com/persistent3.html"
+          src="https://docs.google.com/document/d/1-xkiK3uzw19frmiI_qyxajDBh4zWaO5fFySb4mr7Grc/edit?usp=sharing"
         />
       </div>
     );

@@ -22,8 +22,13 @@ class Nav extends Component {
     return (
       <Menu style={{ ...navStyle }} stackable>
 
-        <Menu.Item href="/" style={{ ...txtStyle2 }}>
+        <Menu.Item href="/" 
+        className="cybr-btn"
+        style={{ ...txtStyle2 }}>
           Joseph Edward, Web Developer{" "}
+          <span aria-hidden className="cybr-btn__glitch">
+            Glitch_
+          </span>
         </Menu.Item>
 
         <Menu.Item style={{ ...txtStyle2 }} href="/projects">
@@ -36,16 +41,16 @@ class Nav extends Component {
           Contact{" "}
         </Menu.Item>
         <Menu.Item
-          className="cybr-btn"
+          
           style={{
             ...txtStyle2,
           }}
           href="/resume"
         >
-          Persistent{" "}
-          <span aria-hidden className="cybr-btn__glitch">
+          Resume{" "}
+          {/* <span aria-hidden className="cybr-btn__glitch">
             Glitch_
-          </span>
+          </span> */}
         </Menu.Item>
         <Menu.Item style={{ ...txtStyle2 }}>
           Invert
