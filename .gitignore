@@ -8,6 +8,8 @@ node_modules/
 build
 misc
 /misc
-/misc/*
+/misc/
+*/misc/*
+
 .env
 

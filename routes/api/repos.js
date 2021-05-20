@@ -1,12 +1,12 @@
 const router = require("express").Router();
-const ghapi=require("../../GHAPI")
+const ghapi=require("./GHAPI")
 
 function getRepos(){
     return ghapi.callGHAPI();
 }
 
 router.route('/').get(function(req, res) {
-    console.log(req.params.id);
+    // console.log(req.params.id);
     getRepos().then(repoData => res.json(repoData));
   });
 

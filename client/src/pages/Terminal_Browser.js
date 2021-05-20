@@ -83,9 +83,9 @@ class TerminalBrowser extends Component {
           descriptions={{
             'open-google': 'opens google.com',
             "change-background-color":'Change the background color, if valid color string for your browser.',
-            "movie-this": "Search the IMDB database for movie results, e.g. 'movie-this Batman'.",
+            "movie-this": "Search the IMDB database for movie results, e.g. 'movie-this Dune'.",
             "concert-this": "Search the Events in Town database for concert information, e.g. 'concert-this The Weekend'.",
-            "spotify-this-song":"Searches Spotify API for given song, e.g. 'spotify-this-song Sail Away'.",
+            "spotify-this-song":"Searches Spotify API for given song, e.g. 'spotify-this-song Orinoco Flow'.",
             
           }}
           msg="Type 'help' to get a list of commands."

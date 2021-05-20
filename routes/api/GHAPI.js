@@ -37,7 +37,6 @@ return mRs;
 }
 
 callGHAPI().then((res)=>{
-   //useful for debugging 
   // console.log(res)
 });
 

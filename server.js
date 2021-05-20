@@ -1,12 +1,8 @@
 require("dotenv").config();
 const express = require("express");
-const mongoose = require("mongoose");
 const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 8888;
-
-// const gapi = require("./GHAPI.js");
-const path = require('path')
 require('dotenv').config({ path:"../.env" });
 
 
@@ -20,11 +16,12 @@ if (process.env.NODE_ENV === "production") {
 
 app.use("/",routes);
 
-mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/react_project_list",
-  { useNewUrlParser: true, useUnifiedTopology: true }
-);
-
+if (process.env.NODE_ENV === "production") {
+  router.use(function(req, res) {
+  res.sendFile(path.join(__dirname, "../client/build/index.html"));
+});
+ 
+}
 app.listen(PORT, function() {
   console.log(`🌎  ==> API Server NOW listening on PORT ${PORT}!`);
 });

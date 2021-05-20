@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import API from "./utils/API";
-import { Col, Row, Container } from "./components/Grid";
-import { List, ListItem } from "./components/List";
+import API from "../utils/API";
+import { Col, Row, Container } from "../components/Grid";
+import { List, ListItem } from "../components/List";
 
 class Projects extends Component {
   state = {
@@ -28,36 +28,6 @@ class Projects extends Component {
       )
       .catch(err => console.log(err));
   };
-
-  deleteproject = id => {
-    API.deleteproject(id)
-      .then(res => this.loadprojects())
-      .catch(err => console.log(err));
-  };
-
-  handleInputChange = event => {
-    const { name, value } = event.target;
-    this.setState({
-      [name]: value
-    });
-  };
-
-  handleFormSubmit = event => {
-    event.preventDefault();
-    if (this.state.title && this.state.contributors) {
-      API.saveproject({
-        title: this.state.title,
-        contributors: this.state.contributors,
-        description: this.state.description
-      })
-        .then(res => this.loadprojects())
-        .catch(err => console.log(err));
-    }
-  };
-
-  loadProjectURL(e, url) {
-    window.location.replace(url);
-  }
 
   requestOptions = {
     method: "GET",
