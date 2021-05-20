@@ -16,12 +16,7 @@ if (process.env.NODE_ENV === "production") {
 
 app.use("/",routes);
 
-if (process.env.NODE_ENV === "production") {
-  router.use(function(req, res) {
-  res.sendFile(path.join(__dirname, "../client/build/index.html"));
-});
- 
-}
+
 app.listen(PORT, function() {
   console.log(`🌎  ==> API Server NOW listening on PORT ${PORT}!`);
 });
