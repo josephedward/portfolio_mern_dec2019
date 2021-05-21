@@ -6,27 +6,23 @@ import "./index.css";
 require("typeface-aleo");
 require("typeface-open-sans");
 
-// const [, updateState] = React.useState();
-// const forceUpdate = React.useCallback(() => updateState({}), []);
 
-function getRandomColor(){
+function getRandomColor() {
   var randomColor = Math.floor(Math.random() * 16777215).toString(16);
-return randomColor
+  return randomColor;
 }
 
-
 class Nav extends Component {
-
-
   render() {
     return (
       <Menu style={{ ...navStyle }} stackable>
-
-        <Menu.Item href="/" 
-        className="cybr-btn"
-        style={{ ...txtStyle2 }}>
+        <Menu.Item href="/" className="cybr-btn" style={{ ...txtStyle2 }}>
           Joseph Edward, Web Developer{" "}
-          <span aria-hidden className="cybr-btn__glitch">
+          <span
+            aria-hidden
+            className="cybr-btn__glitch"
+            style={{ ...glitchStyle }}
+          >
             Glitch_
           </span>
         </Menu.Item>
@@ -41,16 +37,12 @@ class Nav extends Component {
           Contact{" "}
         </Menu.Item>
         <Menu.Item
-          
           style={{
             ...txtStyle2,
           }}
           href="/resume"
         >
           Resume{" "}
-          {/* <span aria-hidden className="cybr-btn__glitch">
-            Glitch_
-          </span> */}
         </Menu.Item>
         <Menu.Item style={{ ...txtStyle2 }}>
           Invert
@@ -85,19 +77,28 @@ const navStyle = {
   width: "100%",
   display: "flex",
   justifyContent: "center",
-
 };
 
 const txtStyle2 = {
   marginBottom: "0px",
-  height:"50px",
+  height: "50px",
   fontFamily: "Helvetica",
   WebkitTextStrokeWidth: "1px",
-  WebkitTextStrokeColor:
-  `#${getRandomColor()}`,
+  WebkitTextStrokeColor: `#${getRandomColor()}`,
   backgroundColor: `#${getRandomColor()}`,
   fontSize: "20px",
   fontWeight: "bold",
   color: "black",
   border: `3px solid #${getRandomColor()}`,
+};
+
+const glitchStyle = {
+  "--primary": `#${getRandomColor()}`,
+  "--shadow-primary:": `#${getRandomColor()}`,
+  "shadow-secondary:": `#${getRandomColor()}`,
+  color: `#${getRandomColor()}`,
+  background: `#${getRandomColor()}`,
+  textShadow: `2px 2px #${getRandomColor()}, -2px -2px #${getRandomColor()}`,
+  border: `5px solid #${getRandomColor()}`,
+  outline: `5px solid #${getRandomColor()}`,
 };
