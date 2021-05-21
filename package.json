@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "description": "Portfolio",
   "main": "server.js",
+  "engines": {
+    "node": "16.0.0",
+    "npm": "7.11.2"
+  },
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "node server.js",
