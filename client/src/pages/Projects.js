@@ -8,7 +8,7 @@ class Projects extends Component {
     projects: [],
     title: "",
     contributors: "",
-    description: ""
+    description: "",
   };
 
   componentDidMount() {
@@ -17,16 +17,16 @@ class Projects extends Component {
 
   loadprojects = () => {
     API.getrepos()
-      .then(res =>
+      .then((res) =>
         // console.log(res.data),
         this.setState({
           projects: res.data,
           title: "",
           contributors: "",
-          description: ""
+          description: "",
         })
       )
-      .catch(err => console.log(err));
+      .catch((err) => {console.log(err)});
   };
 
   requestOptions = {
@@ -38,15 +38,13 @@ class Projects extends Component {
       "Postman-Token": "9d4b0799-97d2-4f8b-945c-e31f72b4361e",
       "Accept-Encoding": "gzip, deflate",
       Connection: "keep-alive",
-      "Access-Control-Allow-Origin": true
+      "Access-Control-Allow-Origin": true,
     },
-    redirect: "follow"
+    redirect: "follow",
   };
 
   render() {
-
     return (
-      
       <div>
         <Container fluid>
           <Row>
@@ -58,7 +56,7 @@ class Projects extends Component {
               </h3>
               {this.state.projects.length ? (
                 <List>
-                  {this.state.projects.map(project => (
+                  {this.state.projects.map((project) => (
                     <ListItem key={project.id}>
                       <strong>
                         <a href={project.html_url}>{project.name}</a>
@@ -93,16 +91,16 @@ class Projects extends Component {
 }
 
 const wB = {
-  background: "white"
+  background: "white",
 };
 
 const orange = {
-  color: "orange"
+  color: "orange",
 };
 
 const bW = {
   background: "black",
-  color: "white"
+  color: "white",
 };
 
 export default Projects;
