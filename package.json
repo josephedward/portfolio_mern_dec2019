@@ -37,6 +37,7 @@
     "semantic-ui-react": "^0.88.2",
     "terminal-in-react": "^4.3.1",
     "typeface-aleo": "0.0.69",
-    "typeface-open-sans": "0.0.75"
+    "typeface-open-sans": "0.0.75",
+    "yargs-parser": ">=13.1.2"
   }
 }
