@@ -7,25 +7,7 @@ import LogsProvider from "react-use-logs";
 
 export default function PFrame(props) {
   
-  function noop() {}
-  const savedFunctions = Object.keys(console).reduce((memo, key) => {
-    if (typeof console[key] == "function") {
-      //keep a copy just in case we need it
-      memo[key] = console[key];
-      //de-fang any functions
-      console[key] = noop;
-    }
-    return memo;
-  }, {});
-
- function logTest(){
-  console.log("Hello?");
-  console.info("Hello-o-o-o?");
-  console.warn("Can anybody hear me?");
-  console.error("I guess there is nobody there...");
-  savedFunctions.log("MUAHAHAHA!");
-}
-
+ 
   return (
 
       <ListItem key={props.id}>
