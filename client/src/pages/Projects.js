@@ -1,7 +1,8 @@
-import React, { Component } from "react";
+import React, { ReactDOM, Component } from "react";
 import API from "../utils/API";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
+import PFrame from "../components/PFrame/PFrame.js";
 
 class Projects extends Component {
   state = {
@@ -26,7 +27,9 @@ class Projects extends Component {
           description: "",
         })
       )
-      .catch((err) => {console.log(err)});
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   requestOptions = {
@@ -57,26 +60,13 @@ class Projects extends Component {
               {this.state.projects.length ? (
                 <List>
                   {this.state.projects.map((project) => (
-                    <ListItem key={project.id}>
-                      <strong>
-                        <a href={project.html_url}>{project.name}</a>
-                      </strong>
-                      <br />
-                      <a style={orange} href={project.homepage}>
-                        {project.homepage}
-                      </a>
-                      <p>{project.description}</p>
-                      {project.homepage ? (
-                        <iframe
-                          width="100%"
-                          height="800"
-                          title="Deployment Iframe"
-                          src={project.homepage}
-                        />
-                      ) : (
-                        <div></div>
-                      )}
-                    </ListItem>
+                    <PFrame
+                      id={project.id}
+                      name={project.name}
+                      html_url={project.html_url}
+                      homepage={project.homepage}
+                      description={project.description}
+                    />
                   ))}
                 </List>
               ) : (

@@ -95,7 +95,7 @@ const txtStyle2 = {
 const glitchStyle = {
   "--primary": `#${getRandomColor()}`,
   "--shadow-primary:": `#${getRandomColor()}`,
-  "shadow-secondary:": `#${getRandomColor()}`,
+  shadowSecondary: `#${getRandomColor()}`,
   color: `#${getRandomColor()}`,
   background: `#${getRandomColor()}`,
   textShadow: `2px 2px #${getRandomColor()}, -2px -2px #${getRandomColor()}`,
