@@ -27,7 +27,7 @@ export default function PFrame(props) {
           />
         ) : (
           <div>
-            <p>Your browser does not support iframes.</p>
+            {/* <p>Your browser does not support iframes.</p> */}
           </div>
         )}
       </ListItem>
